@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.stepdefinations.DataProviderTest">
+      <class name="com.stepdefinations.ExcelLoginTest">
         <methods>
-          <include name="getDataFromDataProvider" invocation-numbers="1"/>
+          <include name="loginZoplaWithExcelData"/>
         </methods>
-      </class> <!-- com.stepdefinations.DataProviderTest -->
+      </class> <!-- com.stepdefinations.ExcelLoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
