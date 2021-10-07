@@ -4,16 +4,16 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 
 public class ExcelUtiliti {
 	// Constants variable
 	final static String excelData = "./ZooplaTestData/TestData.xlsx"; // Excel location
 
-	public static ArrayList<String> readExcelData(int col) throws IOException {
+	public static ArrayList<String> readExcelData(int colno) throws IOException {
 
 		// FileInputStream class identify the location of excel file (Is is from Java
 		// class)
@@ -27,8 +27,8 @@ public class ExcelUtiliti {
 		// class)
 		XSSFSheet sheet = workbook.getSheet("testData"); // Sheet name
 
-		Iterator<Row> row = sheet.iterator();
-		row.hasNext();
+		Iterator<Row> rowiterator = sheet.iterator();
+		rowiterator.next();
 
 		// List is an interface & arreyList is a class
 		// List<String> list = new ArrayList<String>();
@@ -36,16 +36,19 @@ public class ExcelUtiliti {
 		ArrayList<String> list = new ArrayList<String>();
 
 		// while Loop can handle end number of data
-		while (row.hasNext()) {
+		while (rowiterator.hasNext()) {
 
 			// list object take the control of list of data from (excel, web-element db
 			// value,
-			list.add(row.next().getCell(col).getStringCellValue());
+			list.add(rowiterator.next().getCell(colno).getStringCellValue());
 		}
 		// Print out the values
-		System.out.println(list);
+		System.out.println("List ::: " + list);
 		return list;
-
 	}
 
+	public static void main(String[] args) throws Throwable {
+		readExcelData(0);
+		readExcelData(1);
+	}
 }

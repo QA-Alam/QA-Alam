@@ -1,19 +1,14 @@
 package com.utility;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.net.util.Base64;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -174,6 +169,8 @@ public class CommonUtility {
 
 	} 
 	
+	
+	@SuppressWarnings("null")
 	public void screenShot(){
 		ITestResult result = null;
 		//using ITestResult.FAILURE is equals to result.getStatus then it enter into if condition

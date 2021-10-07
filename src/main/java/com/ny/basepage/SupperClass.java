@@ -97,5 +97,25 @@ public class SupperClass {
 
 	}
   
+	public static void initializations() { // setUP();	
+		String browserName = prop.getProperty("browser");
+		
+		if (browserName.equals("chrome")) {
+			logger.info("******** I am a chrome browser*********");
+			System.setProperty("webdriver.chrome.driver", prop.getProperty("mac"));
+			driver = new ChromeDriver();
+
+		} else if (browserName.equals("chrome")) {
+			logger.info("******** I am a chrome browser*********");
+			System.setProperty("webdriver.chrome.driver", prop.getProperty("windows"));
+			driver = new ChromeDriver();
+
+		} 
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.get(prop.getProperty("URL"));
 }
-	
+}
