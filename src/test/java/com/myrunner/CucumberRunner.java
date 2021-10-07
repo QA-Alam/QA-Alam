@@ -7,7 +7,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 		plugin= {"pretty","json:target/cucumber.json" },		
 		//plugin= {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html" },
 		//format ="",		
-		features = { ".//Fetatures/" }, 
+		features = {".//Fetatures/"}, 
         glue = {"com.stepdefinations"}, 	
 		dryRun = false, 
 		monochrome = true, 

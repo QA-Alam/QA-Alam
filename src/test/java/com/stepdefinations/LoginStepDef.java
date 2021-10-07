@@ -1,10 +1,13 @@
 package com.stepdefinations;
 
+import java.io.IOException;
+
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import com.ny.basepage.SupperClass;
 import com.pagefactory.ZooplaElementsPage;
 import com.utility.CommonUtility;
+import com.utility.ExcelUtiliti;
 import com.utility.WaitHelper;
 
 import cucumber.api.java.en.*;
@@ -41,7 +44,7 @@ public class LoginStepDef extends SupperClass {
 		WaitHelper.waitForElement(pf.getEnterPassword(), 20);
 		CommonUtility.highLighterMethod(driver, pf.getEnterPassword());
 		pf.getEnterPassword().sendKeys(Pwd);
-		
+
 	}
 
 	@When("^User click on the signing button$")
@@ -53,7 +56,7 @@ public class LoginStepDef extends SupperClass {
 	}
 
 	@Then("^User able to verify successfully login & verify the homepage title$")
-	public void user_able_to_verify_successfully_login_verify_the_homepage_title() throws InterruptedException {
+	public void user_able_to_verify_successfully_login_verify_the_homepage_title() throws InterruptedException, IOException {
 		String actual = "MyZoopla - Zoopla";
 		if (driver.getPageSource().contains("Incorrect email or password. Please check and try again")) {
 			driver.close();
@@ -65,6 +68,8 @@ public class LoginStepDef extends SupperClass {
 			Assert.assertTrue(true);
 			System.out.println("My Expected result is : " + driver.getTitle());
 			driver.quit();
+			ExcelUtiliti.readExcelData(0);
+			ExcelUtiliti.readExcelData(1);
 		}
 
 	}

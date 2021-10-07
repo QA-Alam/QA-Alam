@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="17355" started-at="2021-10-07T02:02:09Z" finished-at="2021-10-07T02:02:26Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="17355" started-at="2021-10-07T02:02:09Z" finished-at="2021-10-07T02:02:26Z">
+      <class name="com.stepdefinations.DataProviderTest">
+        <test-method status="PASS" signature="getDataFromDataProvider(java.lang.String, java.lang.String)[pri:0, instance:com.stepdefinations.DataProviderTest@609cd4d8]" name="getDataFromDataProvider" duration-ms="8717" started-at="2021-10-07T02:02:09Z" data-provider="alam" finished-at="2021-10-07T02:02:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[abidur868@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1773755Sdi.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getDataFromDataProvider -->
+        <test-method status="PASS" signature="getDataFromDataProvider(java.lang.String, java.lang.String)[pri:0, instance:com.stepdefinations.DataProviderTest@609cd4d8]" name="getDataFromDataProvider" duration-ms="8593" started-at="2021-10-07T02:02:17Z" data-provider="alam" finished-at="2021-10-07T02:02:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[alammohammed79@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SAYEDawan2008@]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getDataFromDataProvider -->
+      </class> <!-- com.stepdefinations.DataProviderTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

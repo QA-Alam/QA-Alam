@@ -13,8 +13,11 @@ public class ZooplaElementsPage extends SupperClass{
 	// Supper key word refer the parents class values
 
 	public ZooplaElementsPage() {
-		PageFactory.initElements(driver, this);
+	PageFactory.initElements(driver, this);
 	}
+     
+	// By click = By.xpath("");
+
 
 	@FindBy(xpath = "(//*[text()='Sign in'])[2]")
 	@CacheLookup
