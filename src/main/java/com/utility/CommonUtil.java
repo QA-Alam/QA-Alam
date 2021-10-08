@@ -1,56 +1,64 @@
 package com.utility;
 
 import java.io.File;
-import java.text.DateFormat;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.log4j.Level;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 
-public class CommonUtility {
+import com.ny.basepage.SupperClass;
 
+import cucumber.api.Scenario;
+
+public class CommonUtil extends SupperClass {
+	private static final String ACTION = "arguments[0].click();";
+	static String projectPath = "user.dir";
 	static WebDriver driver;
-
-	public boolean isElementPresent(WebElement element, WebDriver driver, long timeout) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, timeout);
-			element = wait.until(ExpectedConditions.visibilityOf(element));
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-	}
 
 	public static void highLighterMethod(WebDriver driver, WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
 	}
 
-	public static String captureScreenShot(WebDriver driver, String ScreenShotName) throws Exception {
+	public static String getScreenshot(WebDriver driver, Scenario scenario) {
+		String screenshotName = scenario.getName().replaceAll(" ", "_");
+		String dateName = new SimpleDateFormat("MM.dd.yyyy-hh.mm.ss").format(new Date());
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
-		String currentDir = System.getProperty("user.dir");
-		DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
-		Date date = new Date();
-		String dateTime = dateFormat.format(date.getTime());
-		String destination = currentDir + "//Screenshots//" + dateTime + "//" + ScreenShotName + ".png";
-		FileUtils.copyFile(source, new File(destination));
-		System.out.println("Screen shot taken");
+		String destination = System.getProperty(projectPath) + "/screenshots/" + screenshotName + dateName + ".png";
+		File finalDestination = new File(destination);
+		try {
+			FileUtils.copyFile(source, finalDestination);
+		} catch (IOException e) {
+			logger.log(Level.WARN, "Interrup ted!", e);
+			Thread.currentThread().interrupt();
+		}
 		return destination;
 	}
 
@@ -82,21 +90,6 @@ public class CommonUtility {
 		driver.switchTo().window(MainWindow);
 	}
 
-	public static Actions getAction() {
-		Actions action = new Actions(driver);
-		return action;
-	}
-
-	public static void customClick(WebDriver driver, By by) {
-		try {
-			(new WebDriverWait(driver, 30)).until(ExpectedConditions.visibilityOfElementLocated(by));
-			driver.findElement(by).click();
-		} catch (StaleElementReferenceException sere) {
-			// simply retry finding the element in the refreshed DOM
-			driver.findElement(by).click();
-		}
-	}
-
 	public static boolean retryingFindClick(By by) {
 		boolean result = false;
 		int attempts = 0;
@@ -120,11 +113,6 @@ public class CommonUtility {
 	public static void scrollView(String Element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", Element);
-	}
-
-	public static void jsClick(String locator) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", locator);
 	}
 
 	public static String threeDaysBefore() {
@@ -167,26 +155,169 @@ public class CommonUtility {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(webElement).click().build().perform();
 
-	} 
-	
-	
-	@SuppressWarnings("null")
-	public void screenShot(){
-		ITestResult result = null;
-		//using ITestResult.FAILURE is equals to result.getStatus then it enter into if condition
-		if(ITestResult.FAILURE==result.getStatus()){
-			try{
-				// To create reference of TakesScreenshot
-				TakesScreenshot screenshot=(TakesScreenshot)driver;
-				// Call method to capture screenshot
-				File src=screenshot.getScreenshotAs(OutputType.FILE);
-				// Copy files to specific location 
-				// result.getName() will return name of test case so that screenshot name will be same as test case name
-				FileUtils.copyFile(src, new File("./Screenshots/"+result.getName()+".png"));
-				System.out.println("Successfully captured a screenshot");
-			}catch (Exception e){
-				System.out.println("Exception while taking screenshot "+e.getMessage());
-			} 
-	
+	}
 
-}}}
+	public void selectTheCheckBoxfromList(WebElement element, String valueToSelect) {
+		List<WebElement> allOptions = element.findElements(By.tagName("input"));
+		for (WebElement option : allOptions) {
+			logger.info("Option value " + option.getText());
+			if (valueToSelect.equals(option.getText())) {
+				option.click();
+				break;
+			}
+		}
+	}
+
+	public void selectTheCheckbox(WebElement element) {
+		try {
+			if (element.isSelected()) {
+				logger.info("Checkbox: " + element + "is already selected");
+			} else {
+				// Select the check box
+				element.click();
+			}
+		} catch (Exception e) {
+			logger.info("Unable to select the checkbox: " + element);
+		}
+
+	}
+
+	public static void highLightElement(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style', 'background: green; border: 2px solid red;');", element);
+		try {
+			Thread.sleep(500);
+		} catch (Throwable t) {
+			logger.info("Error with : element cannot finds " + t.getMessage());
+		}
+		js.executeScript("arguments[0].setAttribute('style','border: solid 2px blue');", element);
+
+	}
+
+	public static void jsClick(WebElement object) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript(ACTION, object);
+	}
+
+	public static void click(WebDriver driver, By by) {
+		try {
+			(new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(by));
+			driver.findElement(by).click();
+		} catch (StaleElementReferenceException sere) {
+			driver.findElement(by).click();
+		}
+	}
+
+	public static void waitForElement(WebElement element) {
+		int i = 0;
+		while (i < 10) {
+			try {
+				element.isDisplayed();
+				break;
+			} catch (WebDriverException e) {
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException a) {
+					logger.log(Level.WARN, "Interrupted! ", a);
+					Thread.currentThread().interrupt();
+				}
+				i++;
+			}
+		}
+	}
+
+	public static void waitThenClick(WebElement element, WebDriver driver) {
+		try {
+			Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30))
+					.pollingEvery(Duration.ofMillis(6000)).ignoring(NoSuchElementException.class);
+			fluentWait.until(ExpectedConditions.elementToBeClickable(element));
+			if (element.isDisplayed() && element.isEnabled()) {
+				getAction().moveToElement(element);
+				getAction().click(element).build().perform();
+			}
+		} catch (TimeoutException toe) {
+			logger.log(Level.WARN, " Interrupted! ", toe);
+			Thread.currentThread().interrupt();
+		} catch (Exception e) {
+			logger.log(Level.WARN, "Interrup ted!", e);
+			Thread.currentThread().interrupt();
+		}
+	}
+
+	public static void clickWithAction(WebElement element, WebDriver driver) {
+		Actions action = new Actions(driver);
+		action.moveToElement(element);
+		action.click(element).build().perform();
+	}
+
+	public static WebDriverWait getWebDriverWait() {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		return wait;
+	}
+
+	public static void clickWithJS(WebElement element, WebDriver driver) {
+		getWebDriverWait().until(ExpectedConditions.elementToBeClickable(element));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		((JavascriptExecutor) driver).executeScript(ACTION, element);
+	}
+
+	public static void mouseHover(WebElement elementtoclick, WebDriver driver) {
+		try {
+			Actions action = new Actions(driver);
+			action.moveToElement(elementtoclick).build().perform();
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("arguments[0].style.border='4px groove green'", elementtoclick);
+			String mouseOverScript = "if(document.createEvent)" + "{"
+					+ "    var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover',true, false);"
+					+ " arguments[0].dispatchEvent(evObj);" + "} " + "else if(document.createEventObject) " + "{ "
+					+ "    arguments[0].fireEvent('onmouseover');" + "}";
+			jse.executeScript(mouseOverScript, elementtoclick);
+			getWebDriverWait().until(ExpectedConditions.elementToBeClickable(elementtoclick));
+			highLightElement(elementtoclick);
+			jse.executeScript(ACTION, elementtoclick);
+		} catch (Exception e) {
+			logger.log(Level.WARN, "Interrup ted!", e);
+			Thread.currentThread().interrupt();
+		}
+	}
+
+	public static void waitForStaleElement(WebElement element) {
+		int y = 0;
+		while (y <= 15) {
+			try {
+				element.isDisplayed();
+				break;
+			} catch (StaleElementReferenceException st) {
+				y++;
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e1) {
+					logger.log(Level.WARN, "Interrupted!", e1);
+					Thread.currentThread().interrupt();
+				}
+			} catch (WebDriverException we) {
+				y++;
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e2) {
+					logger.log(Level.WARN, "Interrupted!", e2);
+					Thread.currentThread().interrupt();
+				}
+			}
+		}
+	}
+
+	public static WebElement waitForVisibility(WebElement element) {
+		return getWebDriverWait().until(ExpectedConditions.visibilityOf(element));
+	}
+
+	public void pageLoad(int time) {
+		driver.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
+	}
+
+	public static Actions getAction() {
+		Actions action = new Actions(driver);
+		return action;
+	}
+
+}

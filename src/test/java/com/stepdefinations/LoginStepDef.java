@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import com.ny.basepage.SupperClass;
 import com.pagefactory.ZooplaElementsPage;
-import com.utility.CommonUtility;
+import com.utility.CommonUtil;
 import com.utility.ExcelUtiliti;
 import com.utility.WaitHelper;
 
@@ -31,18 +31,18 @@ public class LoginStepDef extends SupperClass {
 	@When("^User able to click on the login button$")
 	public void user_able_to_click_on_the_login_button() throws InterruptedException {
 		WaitHelper.waitForElement(pf.getClickSingButton(), 10);
-		CommonUtility.highLighterMethod(driver, pf.getClickSingButton());
-		pf.getClickSingButton().click();
+		CommonUtil.highLighterMethod(driver, pf.getClickSingButton());
+				pf.getClickSingButton().click();
 
 	}
 
 	@When("^User enter the userName \"([^\"]*)\" and password \"([^\"]*)\"$")
 	public void user_enter_the_userName_and_password(String userName, String Pwd) throws Exception {
 		WaitHelper.waitForElement(pf.getEnterUserName(), 20);
-		CommonUtility.highLighterMethod(driver, pf.getEnterUserName());
+		CommonUtil.highLighterMethod(driver, pf.getEnterUserName());
 		pf.getEnterUserName().sendKeys(userName);
 		WaitHelper.waitForElement(pf.getEnterPassword(), 20);
-		CommonUtility.highLighterMethod(driver, pf.getEnterPassword());
+		CommonUtil.highLighterMethod(driver, pf.getEnterPassword());
 		pf.getEnterPassword().sendKeys(Pwd);
 
 	}
@@ -50,7 +50,7 @@ public class LoginStepDef extends SupperClass {
 	@When("^User click on the signing button$")
 	public void user_click_on_the_signing_button() {
 		WaitHelper.waitForElement(pf.getClickLogginButton(), 10);
-		CommonUtility.highLighterMethod(driver, pf.getClickLogginButton());
+		CommonUtil.highLighterMethod(driver, pf.getClickLogginButton());
 		pf.getClickLogginButton().click();
 
 	}
