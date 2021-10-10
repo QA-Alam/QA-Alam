@@ -22,10 +22,8 @@ public class WaitHelper extends SupperClass{
 			
 		
 	}
-	   public static void addingForm(List<WebElement> element){            
+	   public static void waitvisibilityOfAllElements(List<WebElement> element){            
        WebDriverWait waitForFormLabel = new WebDriverWait(driver, 30);      
-       //By inputArea = By.tagName("input");
-       //List <WebElement> myIput = driver.findElements(inputArea);
        waitForFormLabel.until(ExpectedConditions.visibilityOfAllElements(element));
       
 

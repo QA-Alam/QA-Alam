@@ -136,7 +136,7 @@ public class ZooplaElementsPage extends SupperClass {
 
 	public void getPropertiesPrice2() {
 		ArrayList<WebElement> price = (ArrayList<WebElement>) driver.findElements(By.xpath("//*[@class='css-1o565rw-Text eczcs4p0']"));
-		WaitHelper.addingForm(price);
+		WaitHelper.waitvisibilityOfAllElements(price);
 		System.out.println("Total number of properties  : " + price.size());
 		for (WebElement value : price) {
 			String priceValue = value.getText();
@@ -148,7 +148,7 @@ public class ZooplaElementsPage extends SupperClass {
 	// how you can handle multiple element from DOM page
 	public List<WebElement> selectProperties() {
 		List<WebElement> element = driver.findElements(By.xpath("//*[@size='6']"));
-		WaitHelper.addingForm(element);
+		WaitHelper.waitvisibilityOfAllElements(element);
 		for (int i = 0; i < element.size(); i++) {
 			if (i > 4) {
 				String value = element.get(i).getText();
@@ -163,7 +163,7 @@ public class ZooplaElementsPage extends SupperClass {
 
 	public void selectProperties2() {
 		List<WebElement> element = driver.findElements(By.xpath("//*[@size='6']"));
-		WaitHelper.addingForm(element);
+		WaitHelper.waitvisibilityOfAllElements(element);
 		for (int i = 0; i < element.size(); i++) {
 			if (i > 4) {
 				String value = element.get(i).getText();
