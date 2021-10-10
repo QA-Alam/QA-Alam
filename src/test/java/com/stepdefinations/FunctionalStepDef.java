@@ -36,30 +36,31 @@ public class FunctionalStepDef extends SupperClass {
 
 	@When("^Users can hover over the page on the For Sale module and click on the UK Property For Sale$")
 	public void users_can_hover_over_the_page_on_the_For_Sale_module_and_click_on_the_UK_Property_For_Sale() {
-	logger.info("******** Users can hover over the page on the For Sale module and click on the UK Property For Sale *********");
-	WaitHelper.waitForElement(pf.getClickOnForSale(), 20);
-	CommonUtil.highLighterMethod(driver, pf.getClickOnForSale());
-	CommonUtil.clickWithAction(pf.getClickOnForSale(), driver);
+		logger.info(
+				"******** Users can hover over the page on the For Sale module and click on the UK Property For Sale *********");
+		WaitHelper.waitForElement(pf.getClickOnForSale(), 20);
+		CommonUtil.highLighterMethod(driver, pf.getClickOnForSale());
+		CommonUtil.clickWithAction(pf.getClickOnForSale(), driver);
 
 	}
 
 	@When("^Users is able to enter location- \"([^\"]*)\"- in the text box & hit enter button$")
 	public void users_is_able_to_enter_location_in_the_text_box_hit_enter_button(String location) {
-	logger.info("******** Users is able to enter location *********"); 
-	WaitHelper.waitForElement(pf.getEnterLocation(), 20);	
-	pf.getEnterLocation().sendKeys(prop.getProperty("location"));
-    pf.getEnterLocation().sendKeys(Keys.ENTER);
-  
+		logger.info("******** Users is able to enter location *********");
+		WaitHelper.waitForElement(pf.getEnterLocation(), 20);
+		pf.getEnterLocation().sendKeys(prop.getProperty("location"));
+		pf.getEnterLocation().sendKeys(Keys.ENTER);
+
 	}
 
 	@When("^Users is able to print all value/price of the properties in the console$")
 	public void users_is_able_to_print_all_value_price_of_the_properties_in_the_console() {
-    pf.getPropertiesPrice2();
+		pf.getPropertiesPrice();
 	}
 
 	@When("^click on the third property from the properties list$")
 	public void click_on_the_third_property_from_the_properties_list() throws InterruptedException {
-    pf.selectProperties();
+		pf.selectProperties();
 	}
 
 	@When("^Users is able to print out the selected property details$")

@@ -7,7 +7,7 @@ package selenium.chalenges;
 	import java.util.Iterator;
 	import java.util.Set;
 
-	public class switchbackParentWinow {
+	public class multipleWindows {
 	    public static void main(String[] args) {
 	        System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
 	        WebDriver driver = new ChromeDriver();
