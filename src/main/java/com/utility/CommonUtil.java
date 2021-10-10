@@ -10,7 +10,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.log4j.Level;
@@ -30,7 +29,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
 
 import com.ny.basepage.SupperClass;
 
@@ -47,6 +45,7 @@ public class CommonUtil extends SupperClass {
 	}
 
 	public static String getScreenshot(WebDriver driver, Scenario scenario) {
+		
 		String screenshotName = scenario.getName().replaceAll(" ", "_");
 		String dateName = new SimpleDateFormat("MM.dd.yyyy-hh.mm.ss").format(new Date());
 		TakesScreenshot ts = (TakesScreenshot) driver;
@@ -151,11 +150,7 @@ public class CommonUtil extends SupperClass {
 		System.out.println("My Phone Number is : " + randomNumeric());
 	}
 
-	public static void acctionClick(WebElement webElement) {
-		Actions actions = new Actions(driver);
-		actions.moveToElement(webElement).click().build().perform();
 
-	}
 
 	public void selectTheCheckBoxfromList(WebElement element, String valueToSelect) {
 		List<WebElement> allOptions = element.findElements(By.tagName("input"));
@@ -194,9 +189,9 @@ public class CommonUtil extends SupperClass {
 
 	}
 
-	public static void jsClick(WebElement object) {
+	public static void jsClick(WebElement ele) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript(ACTION, object);
+		js.executeScript(ACTION, ele);
 	}
 
 	public static void click(WebDriver driver, By by) {
@@ -255,7 +250,7 @@ public class CommonUtil extends SupperClass {
 		return wait;
 	}
 
-	public static void clickWithJS(WebElement element, WebDriver driver) {
+	public static void clickWithJS(WebElement element) {
 		getWebDriverWait().until(ExpectedConditions.elementToBeClickable(element));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		((JavascriptExecutor) driver).executeScript(ACTION, element);

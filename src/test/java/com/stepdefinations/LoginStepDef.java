@@ -7,7 +7,6 @@ import org.testng.Assert;
 import com.ny.basepage.SupperClass;
 import com.pagefactory.ZooplaElementsPage;
 import com.utility.CommonUtil;
-import com.utility.ExcelUtiliti;
 import com.utility.WaitHelper;
 
 import cucumber.api.java.en.*;
@@ -17,7 +16,7 @@ public class LoginStepDef extends SupperClass {
 	ZooplaElementsPage pf;
 
 	@Given("^User can open any browser$")
-	public void user_can_open_any_browser() {
+	public void user_can_open_any_browser() throws InterruptedException {
 		initialization();
 		pf = PageFactory.initElements(driver, ZooplaElementsPage.class);
 		// pf = new ZooplaElementsPage(driver);
@@ -25,22 +24,28 @@ public class LoginStepDef extends SupperClass {
 
 	@Given("^User able to enter \"([^\"]*)\" url$")
 	public void user_able_to_enter_url(String url) {
+		logger.info("******** User able to enter URL *********");
 		driver.navigate().to(url);
 	}
 
 	@When("^User able to click on the login button$")
 	public void user_able_to_click_on_the_login_button() throws InterruptedException {
+		logger.info("******** User able to click on the login button *********");
 		WaitHelper.waitForElement(pf.getClickSingButton(), 10);
 		CommonUtil.highLighterMethod(driver, pf.getClickSingButton());
-				pf.getClickSingButton().click();
+
+		// CommonUtil.clickWithJS(pf.getClickSingButton());
+		pf.getClickSingButton().click();
 
 	}
 
 	@When("^User enter the userName \"([^\"]*)\" and password \"([^\"]*)\"$")
 	public void user_enter_the_userName_and_password(String userName, String Pwd) throws Exception {
+		logger.info("******** User enter the userName *********");
 		WaitHelper.waitForElement(pf.getEnterUserName(), 20);
 		CommonUtil.highLighterMethod(driver, pf.getEnterUserName());
 		pf.getEnterUserName().sendKeys(userName);
+		logger.info("******** User enter the Password *********");
 		WaitHelper.waitForElement(pf.getEnterPassword(), 20);
 		CommonUtil.highLighterMethod(driver, pf.getEnterPassword());
 		pf.getEnterPassword().sendKeys(Pwd);
@@ -49,14 +54,18 @@ public class LoginStepDef extends SupperClass {
 
 	@When("^User click on the signing button$")
 	public void user_click_on_the_signing_button() {
+		logger.info("******** User click on the signing button *********");
 		WaitHelper.waitForElement(pf.getClickLogginButton(), 10);
 		CommonUtil.highLighterMethod(driver, pf.getClickLogginButton());
-		pf.getClickLogginButton().click();
+		CommonUtil.clickWithAction(pf.getClickLogginButton(), driver);
+		// pf.getClickLogginButton().click();
 
 	}
 
 	@Then("^User able to verify successfully login & verify the homepage title$")
-	public void user_able_to_verify_successfully_login_verify_the_homepage_title() throws InterruptedException, IOException {
+	public void user_able_to_verify_successfully_login_verify_the_homepage_title()
+			throws InterruptedException, IOException {
+		logger.info("******** User able to verify successfully login & verify the homepage title *********");
 		String actual = "MyZoopla - Zoopla";
 		if (driver.getPageSource().contains("Incorrect email or password. Please check and try again")) {
 			driver.close();
@@ -68,8 +77,7 @@ public class LoginStepDef extends SupperClass {
 			Assert.assertTrue(true);
 			System.out.println("My Expected result is : " + driver.getTitle());
 			driver.quit();
-			ExcelUtiliti.readExcelData(0);
-			ExcelUtiliti.readExcelData(1);
+
 		}
 
 	}

@@ -8,11 +8,11 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 		//plugin= {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html" },
 		//format ="",		
 		features = {".//Fetatures/"}, 
-        glue = {"com.stepdefinations"}, 	
+        glue = {"com.stepdefinations","com.hooks"}, 	
 		dryRun = false, 
 		monochrome = true, 
 		strict = false,
-		tags = {"@Smoke"})
+		tags = {"@Sanity"})
 public class CucumberRunner extends AbstractTestNGCucumberTests {
 
 }

@@ -15,6 +15,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import com.pagefactory.ZooplaElementsPage;
+
 
 public class SupperClass {
 
@@ -28,7 +30,7 @@ public class SupperClass {
 	}
 
 	public SupperClass() {
-		logger = Logger.getLogger("Zoopla"); // Added logger
+		logger = Logger.getLogger("Test Lead Alam"); // Added logger
 		PropertyConfigurator.configure("Log4j.properties");// Added logger
 
 		try {
@@ -43,7 +45,7 @@ public class SupperClass {
 	}
 
 	
-	public static void initialization() { // setUP();	
+	public static void initialization() throws InterruptedException { // setUP();	
 		String browserName = prop.getProperty("browser");
 		
 		if (browserName.equals("chrome")) {
@@ -93,7 +95,8 @@ public class SupperClass {
 
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		//driver.get(prop.getProperty("URL"));
+	    driver.get(prop.getProperty("URL"));
+	   
 
 	}
   
