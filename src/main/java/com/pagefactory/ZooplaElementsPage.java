@@ -150,7 +150,6 @@ public class ZooplaElementsPage extends SupperClass {
 	public List<WebElement> selectProperties() {
 		List<WebElement> element = driver.findElements(By.xpath("//*[@size='6']"));
 		WaitHelper.waitVisibilityOfAllElements(element);
-
 		for (int i = 0; i < element.size(); i++) {
 			if (i > 4) {
 				String value = element.get(i).getText();
