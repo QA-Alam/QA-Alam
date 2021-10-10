@@ -1,7 +1,5 @@
 package com.utility;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,23 +11,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ny.basepage.SupperClass;
 
-public class WaitHelper extends SupperClass{
+public class WaitHelper extends SupperClass {
 
-	
 	public static void waitForElement(WebElement element, long timeout) {
 		WebDriverWait wait = new WebDriverWait(driver, timeout);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
-			
-		
+
 	}
-	   public static void waitvisibilityOfAllElements(List<WebElement> element){            
-       WebDriverWait waitForFormLabel = new WebDriverWait(driver, 30);      
-       waitForFormLabel.until(ExpectedConditions.visibilityOfAllElements(element));
-      
 
+	public static void waitVisibilityOfAllElements(List<WebElement> element) {
+		WebDriverWait waitForFormLabel = new WebDriverWait(driver, 30);
+		waitForFormLabel.until(ExpectedConditions.visibilityOfAllElements(element));
 
-   }
+	}
+	public static void waitPresenceOfAllElementsLocatedBy(By element) {
+		WebDriverWait waitForFormLabel = new WebDriverWait(driver, 30);
+		waitForFormLabel.until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));
 
-
+	}
 }
-
