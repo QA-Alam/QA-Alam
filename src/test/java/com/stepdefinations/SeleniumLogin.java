@@ -2,29 +2,22 @@ package com.stepdefinations;
 
 
 import java.io.FileReader;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
+
 
 public class SeleniumLogin {
 	public static WebDriver driver;
 	static FileReader textfile;
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) throws Throwable {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");

@@ -15,9 +15,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import com.pagefactory.ZooplaElementsPage;
-
-
 public class SupperClass {
 
 	public static Logger logger;

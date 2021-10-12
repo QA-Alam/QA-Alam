@@ -13,6 +13,7 @@ public class ExcelUtiliti {
 	// Constants variable
 	final static String excelData = "./ZooplaTestData/TestData.xlsx"; // Excel location
 
+	@SuppressWarnings("resource")
 	public static ArrayList<String> readExcelData(int colno) throws IOException {
 
 		// FileInputStream class identify the location of excel file (Is is from Java
