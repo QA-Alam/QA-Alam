@@ -17,16 +17,17 @@ import com.sun.glass.events.KeyEvent;
  
 public class FileUpload_Robo {
  
-    public static void main(String[] args) throws InterruptedException, AWTException {
+    @SuppressWarnings("restriction")
+	public static void main(String[] args) throws InterruptedException, AWTException {
     // TODO Auto-generated method stub
 
-		System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
-        WebDriver drv = new ChromeDriver();
+	System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
+    WebDriver drv = new ChromeDriver();
         
 		drv.manage().window().maximize();
     drv.manage().window().maximize(); // maximizing window
     drv.manage().timeouts().pageLoadTimeout(10, TimeUnit. SECONDS);//for page load
-    drv.get("https://www.grammarly.com/plagiarism-checker");//open testing website
+    drv.get("https://www.grammarly.com/plagiarism-checker");//open testing web-site
     drv.manage().timeouts().implicitlyWait(10, TimeUnit. SECONDS);// for Implicit wait
  
     JavascriptExecutor js = (JavascriptExecutor)drv; // Scroll operation using Js Executor
@@ -35,21 +36,21 @@ public class FileUpload_Robo {
  
      WebElement browse = drv.findElement(By.linkText("Upload a file"));
      // using linkText, to click on browse element 
-    browse.click(); // Click on browse option on the webpage
+    browse.click(); // Click on browse option on the web-page
     Thread.sleep(2000); // suspending execution for specified time period
  
     // creating object of Robot class
     Robot rb = new Robot();
  
-    // copying File path to Clipboard
+    // copying File path to Clip board
     StringSelection str = new StringSelection("C:\\Users\\Chait\\Desktop\\File upload.docx");
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
  
-     // press Contol+V for pasting
-     rb.keyPress(KeyEvent.VK_CONTROL);
-     rb.keyPress(KeyEvent.VK_V);
+    // press Control+V for pasting
+    rb.keyPress(KeyEvent.VK_CONTROL);
+    rb.keyPress(KeyEvent.VK_V);
  
-    // release Contol+V for pasting
+    // release Control+V for pasting
     rb.keyRelease(KeyEvent.VK_CONTROL);
     rb.keyRelease(KeyEvent.VK_V);
  

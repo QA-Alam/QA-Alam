@@ -7,6 +7,7 @@ import org.testng.asserts.SoftAssert;
 
 public class TestNGAssertions {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability("Mobile name", "Android");

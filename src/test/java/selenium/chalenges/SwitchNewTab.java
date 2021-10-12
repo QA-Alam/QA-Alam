@@ -1,8 +1,7 @@
 package selenium.chalenges;
 
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
