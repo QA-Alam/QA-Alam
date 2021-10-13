@@ -33,6 +33,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.ny.basepage.SupperClass;
 
 import cucumber.api.Scenario;
+import com.sun.glass.events.KeyEvent;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 
 public class CommonUtil extends SupperClass {
 	private static final String ACTION = "arguments[0].click();";
@@ -314,5 +319,56 @@ public class CommonUtil extends SupperClass {
 		Actions action = new Actions(driver);
 		return action;
 	}
-
+	
+	 public static void sendkeys(String text) {
+		  try {
+		    Robot robot = new Robot();
+		    String lol = text.toUpperCase();
+		    for(int i=0;i<lol.length();i++) {
+		      robot.keyPress(Character.getNumericValue(lol.charAt(i)));
+		    }
+		  } catch(java.awt.AWTException exc) {
+		    System.out.println("error");
+		  }
+		}
+	 
+	 public static void moveMouse(int x, int y){
+		  try{
+		    Robot robot = new Robot();
+		    robot.mouseMove(x, y);
+		  }catch(Exception e){
+		    System.out.println("Error");
+		  }
+		}
+	 
+	 @SuppressWarnings("restriction")
+	public void uploadFile(String filepath) {
+		    try {
+		        //put file path in a clip-board
+		        StringSelection strSel = new StringSelection(filepath);
+		        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(strSel, null);
+		        //imitate mouse event ENTER/COPY/PASTE
+		        Robot robot = new Robot();
+		        robot.keyPress(KeyEvent.VK_ENTER);
+		        robot.keyRelease(KeyEvent.VK_ENTER);
+		        robot.keyPress(KeyEvent.VK_CONTROL);
+		        robot.keyPress(KeyEvent.VK_V);
+		        robot.keyRelease(KeyEvent.VK_V);
+		        robot.keyRelease(KeyEvent.VK_CONTROL);
+		        robot.keyPress(KeyEvent.VK_ENTER);
+		        robot.keyRelease(KeyEvent.VK_ENTER);
+		        logger.info("Success to upload file: " + filepath);
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
+		}
+	 public void testUpload() throws InterruptedException
+		{
+			driver.get("");
+			WebElement element = driver.findElement(By.name("uploadfile"));
+			element.click();
+			uploadFile("path to the file");
+			Thread.sleep(2000);
+		}
+		
 }
