@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 public class CheckBoxOperations {
 
 	public static void Element_isSelected() {
-
 		String exePath = "/Applications/chromedriver";
 		System.setProperty("webdriver.chrome.driver", exePath);
 		WebDriver driver = new ChromeDriver();

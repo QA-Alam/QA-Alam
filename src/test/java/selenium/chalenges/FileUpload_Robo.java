@@ -2,61 +2,73 @@ package selenium.chalenges;
 
 import java.awt.AWTException;
 import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.util.concurrent.TimeUnit;
 import java.awt.Robot;
- 
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import com.sun.glass.events.KeyEvent;
- 
- 
-public class FileUpload_Robo {
- 
-    @SuppressWarnings("restriction")
-	public static void main(String[] args) throws InterruptedException, AWTException {
-    // TODO Auto-generated method stub
+import org.testng.annotations.Test;
 
-	System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
-    WebDriver drv = new ChromeDriver();
-        
-		drv.manage().window().maximize();
-    drv.manage().window().maximize(); // maximizing window
-    drv.manage().timeouts().pageLoadTimeout(10, TimeUnit. SECONDS);//for page load
-    drv.get("https://www.grammarly.com/plagiarism-checker");//open testing web-site
-    drv.manage().timeouts().implicitlyWait(10, TimeUnit. SECONDS);// for Implicit wait
- 
-    JavascriptExecutor js = (JavascriptExecutor)drv; // Scroll operation using Js Executor
-    js.executeScript("window.scrollBy(0,200)"); // Scroll Down(+ve) upto browse option
-    Thread.sleep(2000); // suspending execution for specified time period
- 
-     WebElement browse = drv.findElement(By.linkText("Upload a file"));
-     // using linkText, to click on browse element 
-    browse.click(); // Click on browse option on the web-page
-    Thread.sleep(2000); // suspending execution for specified time period
- 
-    // creating object of Robot class
-    Robot rb = new Robot();
- 
-    // copying File path to Clip board
-    StringSelection str = new StringSelection("C:\\Users\\Chait\\Desktop\\File upload.docx");
-    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
- 
-    // press Control+V for pasting
-    rb.keyPress(KeyEvent.VK_CONTROL);
-    rb.keyPress(KeyEvent.VK_V);
- 
-    // release Control+V for pasting
-    rb.keyRelease(KeyEvent.VK_CONTROL);
-    rb.keyRelease(KeyEvent.VK_V);
- 
-    // for pressing and releasing Enter
-    rb.keyPress(KeyEvent.VK_ENTER);
-    rb.keyRelease(KeyEvent.VK_ENTER);
-   }
- 
+import com.sun.glass.events.KeyEvent;
+
+public class FileUpload_Robo {
+
+	@Test
+	public void UploadSendkeys() throws InterruptedException {
+		String baseUrl = "http://demo.guru99.com/test/upload/";
+		String exePath = "/Applications/chromedriver";
+		System.setProperty("webdriver.chrome.driver", exePath);
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS); // for page load
+		driver.get(baseUrl);
+
+		WebElement uploadElement = driver.findElement(By.id("uploadfile_0"));
+		// enter the file path onto the file-selection input field
+		uploadElement.sendKeys("/Users/mohammedalam/WebserviceAPI+Test+cases.xlsx");
+		// check the "I accept the terms of service" check box
+		driver.findElement(By.id("terms")).click();
+		// click the "UploadFile" button
+		driver.findElement(By.name("send")).click();
+	}
+
+	public static void main(String[] args) throws InterruptedException, AWTException {
+		String baseUrl = "http://demo.guru99.com/test/upload/";
+		String exePath = "/Applications/chromedriver";
+		System.setProperty("webdriver.chrome.driver", exePath);
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS); // for page load
+		driver.get(baseUrl);
+		WebElement uploadElement = driver.findElement(By.id("uploadfile_0")); // using linkText, to click on browse
+																				// element
+		uploadElement.click(); // Click on browse option on the web-page
+		Thread.sleep(2000); // suspending execution for specified time period
+		fileUpload("/Users/mohammedalam/WebserviceAPI+Test+cases.xlsx");
+
+	}
+
+	@SuppressWarnings("restriction")
+	public static void fileUpload(String path) throws AWTException {
+		StringSelection strSelection = new StringSelection(path);
+		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+		clipboard.setContents(strSelection, null);
+
+		Robot robot = new Robot();
+
+		robot.delay(300);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.delay(200);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+	}
 }

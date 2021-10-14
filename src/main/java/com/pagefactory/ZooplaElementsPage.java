@@ -1,6 +1,5 @@
 package com.pagefactory;
 
-
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,11 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 import com.ny.basepage.SupperClass;
 import com.utility.WaitHelper;
 
-
 public class ZooplaElementsPage extends SupperClass {
 	// What is deference between this & supper keyword
 	// this key word is refer the current class values
 	// Supper key word refer the parents class values
+	public static String value;
 
 	public ZooplaElementsPage() {
 		PageFactory.initElements(driver, this);
@@ -62,7 +61,7 @@ public class ZooplaElementsPage extends SupperClass {
 	}
 
 	// ********************************************************************
-	
+
 	@FindBy(xpath = "(//*[text()='For sale'])[1]")
 	@CacheLookup
 	private WebElement clickOnForSale;
@@ -91,7 +90,7 @@ public class ZooplaElementsPage extends SupperClass {
 	@CacheLookup
 	private WebElement clickingProperty;
 
-	public WebElement getclickingProperty() {
+	public WebElement verifyThePropertyPrice() {
 		return clickingProperty;
 	}
 
@@ -142,19 +141,30 @@ public class ZooplaElementsPage extends SupperClass {
 			String priceValue = value.getText();
 			System.out.println("Price of properties  : " + priceValue);
 		}
+
 	}
 
 	// How you find out specific element from web site
 	// how you can handle multiple element from DOM page
-	public List<WebElement> selectProperties() {
-		List<WebElement> element = driver.findElements(By.xpath("//*[@size='6']"));
+	public List<WebElement> selectProperties(int num) {
+		// First i take help from list interface, declare find elements & passing the
+		// dynamic xpath
+		List<WebElement> element = driver.findElements(By.xpath("//*[@class='css-1o565rw-Text eczcs4p0']"));
 		WaitHelper.waitVisibilityOfAllElements(element);
-		for (int i = 0; i < element.size(); i++) {
-			if (i > 4) {
-				String value = element.get(i).getText();
+
+		// I am use the looping concept for take the control of all the web elements
+		for (int i = 1; i < element.size(); i++) {
+			// Then i have to use java condition, inside the condition i have to pass i > require number
+			// Which element i want to click
+			if (i > num) { // 6
+				value = element.get(i).getText();
 				System.out.println("Selected property number is :: " + i);
 				System.out.println("Selected property price is :: " + value);
+
+				// help with get method i am clicking the element
 				element.get(i).click();
+				// after condition satisfy i have break the loop
+				// that's pretty much about dynamic elements handling option
 				break;
 			}
 		}
@@ -176,4 +186,3 @@ public class ZooplaElementsPage extends SupperClass {
 
 	}
 }
-
