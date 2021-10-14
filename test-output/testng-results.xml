@@ -2,34 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Automation Test Suite" duration-ms="18434" started-at="2021-10-13T23:55:04Z" finished-at="2021-10-13T23:55:22Z">
+  <suite name="Default suite" duration-ms="6186" started-at="2021-10-14T23:07:15Z" finished-at="2021-10-14T23:07:21Z">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.myrunner.CucumberRunner@71248c21]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
     </groups>
-    <test name="Zoopla Login test" duration-ms="18434" started-at="2021-10-13T23:55:04Z" finished-at="2021-10-13T23:55:22Z">
-      <class name="com.myrunner.CucumberRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.myrunner.CucumberRunner@71248c21]" name="setUpClass" is-config="true" duration-ms="325" started-at="2021-10-13T23:55:04Z" finished-at="2021-10-13T23:55:04Z">
+    <test name="Default test" duration-ms="6186" started-at="2021-10-14T23:07:15Z" finished-at="2021-10-14T23:07:21Z">
+      <class name="selenium.chalenges.FileUpload_Robo">
+        <test-method status="PASS" signature="UploadSendkeys()[pri:0, instance:selenium.chalenges.FileUpload_Robo@1190200a]" name="UploadSendkeys" duration-ms="6152" started-at="2021-10-14T23:07:15Z" finished-at="2021-10-14T23:07:21Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.myrunner.CucumberRunner@71248c21]" name="feature" duration-ms="17951" started-at="2021-10-13T23:55:04Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-10-13T23:55:22Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[User can search the properties, select the property, buy the property,]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.myrunner.CucumberRunner@71248c21]" name="tearDownClass" is-config="true" duration-ms="13" started-at="2021-10-13T23:55:22Z" finished-at="2021-10-13T23:55:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- com.myrunner.CucumberRunner -->
-    </test> <!-- Zoopla Login test -->
-  </suite> <!-- Automation Test Suite -->
+        </test-method> <!-- UploadSendkeys -->
+      </class> <!-- selenium.chalenges.FileUpload_Robo -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
