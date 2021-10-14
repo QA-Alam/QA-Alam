@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import com.sun.glass.events.KeyEvent;
@@ -45,22 +46,18 @@ public class FileUpload_Robo {
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS); // for page load
 		driver.get(baseUrl);
 		WebElement uploadElement = driver.findElement(By.id("uploadfile_0")); // using linkText, to click on browse
-																				// element
-		uploadElement.click(); // Click on browse option on the web-page
-		Thread.sleep(2000); // suspending execution for specified time period
-		fileUpload("/Users/mohammedalam/WebserviceAPI+Test+cases.xlsx");
-
-	}
-
-	@SuppressWarnings("restriction")
-	public static void fileUpload(String path) throws AWTException {
-		StringSelection strSelection = new StringSelection(path);
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(uploadElement);
+		action.click(uploadElement).build().perform(); // element
+		Thread.sleep(2000); 
+		
+		
+		StringSelection strSelection = new StringSelection("/Users/mohammedalam/WebserviceAPI+Test+cases.xlsx");
 		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 		clipboard.setContents(strSelection, null);
-
 		Robot robot = new Robot();
-
-		robot.delay(300);
+		robot.delay(250);
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		robot.keyPress(KeyEvent.VK_CONTROL);
@@ -68,7 +65,9 @@ public class FileUpload_Robo {
 		robot.keyRelease(KeyEvent.VK_V);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.delay(200);
+		robot.delay(90);
 		robot.keyRelease(KeyEvent.VK_ENTER);
+
 	}
+
 }

@@ -109,9 +109,9 @@ public class CommonUtil extends SupperClass {
 		return result;
 	}
 
-	public static void scrollDown() {
+	public static void scrollDown(WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1000)");
+		js.executeScript("window.scrollBy(0,1000)",element);
 	}
 
 	public static void scrollView(String Element) {
