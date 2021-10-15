@@ -13,8 +13,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
+import java.awt.event.KeyEvent;
 
-import com.sun.glass.events.KeyEvent;
 
 public class FileUpload_Robo {
 
@@ -51,8 +51,6 @@ public class FileUpload_Robo {
 		action.moveToElement(uploadElement);
 		action.click(uploadElement).build().perform(); // element
 		Thread.sleep(2000); 
-		
-		
 		StringSelection strSelection = new StringSelection("/Users/mohammedalam/WebserviceAPI+Test+cases.xlsx");
 		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 		clipboard.setContents(strSelection, null);
