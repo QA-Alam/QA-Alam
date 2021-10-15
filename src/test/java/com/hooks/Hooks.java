@@ -4,6 +4,7 @@ import com.ny.basepage.SupperClass;
 import com.pagefactory.ZooplaElementsPage;
 import com.utility.CommonUtil;
 import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
 public class Hooks extends SupperClass {
@@ -20,7 +21,7 @@ public class Hooks extends SupperClass {
 		logger.info("");
 	}
 
-	//@After
+	@After
 	public void tearDown(Scenario scenario) {
 		if (scenario.isFailed()) {
 			CommonUtil.getScreenshot(driver, scenario);
