@@ -93,7 +93,16 @@ public class ZooplaElementsPage extends SupperClass {
 	public WebElement verifyThePropertyPrice() {
 		return clickingProperty;
 	}
+	//*[@class='css-1or8lzn-BodyContainer ep4jli7']
+	@FindBy(xpath = "//*[@class='css-1or8lzn-BodyContainer ep4jli7']")
+	@CacheLookup
+	private WebElement propertyDetails;
 
+	public WebElement verifyThePropertyDetails() {
+		return propertyDetails;
+	}
+	
+	
 	// How you handle the group of object
 	// By Collection framework
 
@@ -157,7 +166,7 @@ public class ZooplaElementsPage extends SupperClass {
 			// Then i have to use java condition, inside the condition i have to pass i > require number
 			// Which element i want to click
 			if (i > num) { // 6
-				value = element.get(i).getText();
+				 value = element.get(i).getText();
 				System.out.println("Selected property number is :: " + i);
 				System.out.println("Selected property price is :: " + value);
 

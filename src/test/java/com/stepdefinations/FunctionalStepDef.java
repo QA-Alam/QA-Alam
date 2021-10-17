@@ -60,19 +60,21 @@ public class FunctionalStepDef extends SupperClass {
 
 	@When("^click on the third property from the properties list$")
 	public void click_on_the_third_property_from_the_properties_list() throws InterruptedException {
-		pf.selectProperties(1);
+		pf.selectProperties(3);
 	}
 
 	@When("^Users is able to print out the selected property details$")
 	public void users_is_able_to_print_out_the_selected_property_details() {
-		
-		Assert.assertEquals(ZooplaElementsPage.value, pf.verifyThePropertyPrice().getText());
-		System.out.println("My selected property price is : "+pf.verifyThePropertyPrice().getText());
-
+		String value = pf.verifyThePropertyDetails().getText();
+	    System.out.println("Property Deteleis : "+value);
 	}
 
 	@Then("^Users can Verify the price of the selected property$")
 	public void users_can_Verify_the_price_of_the_selected_property() {
+		
+		Assert.assertEquals(ZooplaElementsPage.value, pf.verifyThePropertyPrice().getText());
+		System.out.println("My expected result is a : "+pf.verifyThePropertyPrice().getText());
+		
 
 	}
 

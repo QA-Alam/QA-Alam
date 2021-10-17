@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6186" started-at="2021-10-14T23:07:15Z" finished-at="2021-10-14T23:07:21Z">
+  <suite name="Default suite" duration-ms="56" started-at="2021-10-17T00:00:24Z" finished-at="2021-10-17T00:00:24Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6186" started-at="2021-10-14T23:07:15Z" finished-at="2021-10-14T23:07:21Z">
-      <class name="selenium.chalenges.FileUpload_Robo">
-        <test-method status="PASS" signature="UploadSendkeys()[pri:0, instance:selenium.chalenges.FileUpload_Robo@1190200a]" name="UploadSendkeys" duration-ms="6152" started-at="2021-10-14T23:07:15Z" finished-at="2021-10-14T23:07:21Z">
+    <test name="Default test" duration-ms="56" started-at="2021-10-17T00:00:24Z" finished-at="2021-10-17T00:00:24Z">
+      <class name="practice.collections.codes.ListClass">
+        <test-method status="PASS" signature="sortTheData()[pri:0, instance:practice.collections.codes.ListClass@394df057]" name="sortTheData" duration-ms="10" started-at="2021-10-17T00:00:24Z" finished-at="2021-10-17T00:00:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- UploadSendkeys -->
-      </class> <!-- selenium.chalenges.FileUpload_Robo -->
+        </test-method> <!-- sortTheData -->
+      </class> <!-- practice.collections.codes.ListClass -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

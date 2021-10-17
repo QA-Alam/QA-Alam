@@ -33,10 +33,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.ny.basepage.SupperClass;
 
 import cucumber.api.Scenario;
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import java.awt.Robot;
 import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 
 public class CommonUtil extends SupperClass {

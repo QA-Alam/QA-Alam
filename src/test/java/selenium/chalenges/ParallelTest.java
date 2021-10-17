@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.safari.SafariDriver;
-import org.testng.annotations.Test;
+
 
 import com.ny.basepage.SupperClass;
 

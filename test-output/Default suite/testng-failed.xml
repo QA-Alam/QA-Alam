@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="selenium.chalenges.FileUpload_Robo">
+      <class name="practice.collections.codes.ArreyClass">
         <methods>
-          <include name="UploadSendkeys"/>
+          <include name="StringArreyDeclaration"/>
         </methods>
-      </class> <!-- selenium.chalenges.FileUpload_Robo -->
+      </class> <!-- practice.collections.codes.ArreyClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
