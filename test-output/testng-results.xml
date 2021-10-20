@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4218" started-at="2021-10-20T01:31:06Z" finished-at="2021-10-20T01:31:10Z">
+  <suite name="Default suite" duration-ms="47" started-at="2021-10-20T22:44:30Z" finished-at="2021-10-20T22:44:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4218" started-at="2021-10-20T01:31:06Z" finished-at="2021-10-20T01:31:10Z">
-      <class name="selenium.chalenges.DragAndDrops">
-        <test-method status="PASS" signature="DragnDrop()[pri:0, instance:selenium.chalenges.DragAndDrops@1190200a]" name="DragnDrop" duration-ms="4177" started-at="2021-10-20T01:31:06Z" finished-at="2021-10-20T01:31:10Z">
+    <test name="Default test" duration-ms="47" started-at="2021-10-20T22:44:30Z" finished-at="2021-10-20T22:44:30Z">
+      <class name="practice.collections.codes.StringIntervewoCodes">
+        <test-method status="PASS" signature="runMethod()[pri:0, instance:practice.collections.codes.StringIntervewoCodes@394df057]" name="runMethod" duration-ms="9" started-at="2021-10-20T22:44:30Z" finished-at="2021-10-20T22:44:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DragnDrop -->
-      </class> <!-- selenium.chalenges.DragAndDrops -->
+        </test-method> <!-- runMethod -->
+      </class> <!-- practice.collections.codes.StringIntervewoCodes -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
