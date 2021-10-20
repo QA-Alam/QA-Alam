@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="56" started-at="2021-10-17T00:00:24Z" finished-at="2021-10-17T00:00:24Z">
+  <suite name="Default suite" duration-ms="4218" started-at="2021-10-20T01:31:06Z" finished-at="2021-10-20T01:31:10Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="56" started-at="2021-10-17T00:00:24Z" finished-at="2021-10-17T00:00:24Z">
-      <class name="practice.collections.codes.ListClass">
-        <test-method status="PASS" signature="sortTheData()[pri:0, instance:practice.collections.codes.ListClass@394df057]" name="sortTheData" duration-ms="10" started-at="2021-10-17T00:00:24Z" finished-at="2021-10-17T00:00:24Z">
+    <test name="Default test" duration-ms="4218" started-at="2021-10-20T01:31:06Z" finished-at="2021-10-20T01:31:10Z">
+      <class name="selenium.chalenges.DragAndDrops">
+        <test-method status="PASS" signature="DragnDrop()[pri:0, instance:selenium.chalenges.DragAndDrops@1190200a]" name="DragnDrop" duration-ms="4177" started-at="2021-10-20T01:31:06Z" finished-at="2021-10-20T01:31:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sortTheData -->
-      </class> <!-- practice.collections.codes.ListClass -->
+        </test-method> <!-- DragnDrop -->
+      </class> <!-- selenium.chalenges.DragAndDrops -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
