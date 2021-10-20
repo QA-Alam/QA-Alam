@@ -13,8 +13,8 @@ public class Hooks extends SupperClass {
 	ZooplaElementsPage pf;
 
 	@Before
-	public void suiteSetup() throws InterruptedException {		
-		// this.scenario = scenario; Scenario scenario
+	public void suiteSetup(Scenario scenario) throws InterruptedException {
+		this.scenario = scenario; 
 		initialization();
 		logger.info("");
 		logger.info("...........START AUTOMATION.............");
