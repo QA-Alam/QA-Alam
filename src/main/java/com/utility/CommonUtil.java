@@ -340,7 +340,7 @@ public class CommonUtil extends SupperClass {
 		  }
 		}
 	 
-	 @SuppressWarnings("restriction")
+	
 	public void uploadFile(String filepath) {
 		    try {
 		        //put file path in a clip-board

@@ -1,21 +1,36 @@
 package practice.collections.codes;
 
-import java.util.Arrays;
+
 
 public class ArraysClass {
 
 
 	       
 	  public static void main(String[] args) {
-			//String name = "Sazzad";
-			//String names = "Alam";
-			//String name1 = "Alam";
-			//String name12 = "Alam";
+			//declaring and initializing 2D array  
+			int arr[][]={{1,2,3,4}, 
+					     {2,4,0,6},
+					     {4,4,5,8}};  
+			// First count the value as row
+			// Second count as column 
+			int x = arr[1][2];
+			System.out.println(x); // Outputs 0
+			
+			
+			//printing 2D array  
+			for(int i=0;i<3;i++){  
+			 for(int j=0;j<3;j++){  
+			   System.out.print(arr[i][j]+" ");  
+			 }  
+			System.out.println();  
+			}  
+			
+		  
 		  
 		  // How to declare single dimensional array 
 		  // Array length is fixed
 		  // Array is faster 
-			String a[]= new String[1000];
+	/*		String a[]= new String[1000];
 			a[0] = "Alam";
 			a[1] = "sazzad";
 			a[2] = "Mir";
@@ -26,7 +41,7 @@ public class ArraysClass {
 				System.out.println(a[i]);
 			}
 			
-			System.out.println(a[1]);
+			System.out.println(a[1]); */
 			
 			
 /*			// This is the old way (single dimensional)

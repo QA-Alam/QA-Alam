@@ -64,11 +64,11 @@ public class ListClass {
 		// New way
 
 		// Array list is faster (non synchronized)
-		// Compare to arraylist array is faster
+		// Compare to array-list array is faster
 		// Array following the index
 		// When array list add the new value is faster
 		// when array list add the value memory size increase 50%
-		// Array list allow the null value as much req
+		// Array list allow the null value as much requirement
 		List<Integer> lists = new ArrayList<>();
 		lists.add(100);
 		lists.add(200);
@@ -88,7 +88,7 @@ public class ListClass {
 		}
 
 		// 2nd way
-		List<Integer> num = Arrays.asList(100, 200, 300);
+		//List<Integer> num = Arrays.asList(100, 200, 300);
 
 		ArrayList<String> name = new ArrayList<>();
 		name.add("Rahaman");
