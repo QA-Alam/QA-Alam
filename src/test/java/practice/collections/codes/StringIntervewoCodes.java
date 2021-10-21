@@ -6,8 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import org.testng.annotations.Test;
-
 public class StringIntervewoCodes {
 
 	//@Test
@@ -27,13 +25,12 @@ public class StringIntervewoCodes {
 				}
 			}
 		}
-
 		System.out.println(charMap);
 	}
+	
 	public static void main(String[] args) {
 		 String aa = "smarttechitsulition";
-	        String[] stringarray = aa.split("");
-
+	     String[] stringarray = aa.split("");
 	    Map<String , Long> map =  Arrays.stream(stringarray)
 	        .collect(Collectors.groupingBy(c -> c , Collectors.counting()));
 	        map.forEach( (k, v) -> System.out.println(k + " : "+ v)        );
@@ -54,17 +51,15 @@ public class StringIntervewoCodes {
 		Collections.reverse(Arrays.asList(myArray));
 		System.out.println("Reversed Array:" + Arrays.asList(myArray));
 	}
+	
+	
     //@Test
 	public static void reverseWords() {
 		String[] myArray = { "one", "Two", "Three", "Four", "Five", "Six", "Seven" };
 		System.out.println("Original Array:" + Arrays.asList(myArray));
 		reverse(myArray);
-		
-		
-	  
+			  
 	    }
-	
-	
 
 	//@Test
 	public static void reverseNum() {

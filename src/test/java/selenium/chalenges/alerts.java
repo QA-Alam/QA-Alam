@@ -22,6 +22,9 @@ public class alerts {
 		Alert confirmationAlert = driver.switchTo().alert();
 		String alertText = confirmationAlert.getText();
 		System.out.println("Alert text is " + alertText);
+		confirmationAlert.sendKeys("uiuwegfuwegui");
+		confirmationAlert.sendKeys("uiuwegfuwegui");
 		confirmationAlert.accept();
+		confirmationAlert.dismiss();
 	}
 }

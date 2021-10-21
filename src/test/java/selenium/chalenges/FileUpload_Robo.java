@@ -8,13 +8,13 @@ import java.util.concurrent.TimeUnit;
 import java.awt.Robot;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import java.awt.event.KeyEvent;
-
 
 public class FileUpload_Robo {
 
@@ -38,34 +38,39 @@ public class FileUpload_Robo {
 	}
 
 	public static void main(String[] args) throws InterruptedException, AWTException {
-		String baseUrl = "http://demo.guru99.com/test/upload/";
 		String exePath = "/Applications/chromedriver";
 		System.setProperty("webdriver.chrome.driver", exePath);
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS); // for page load
-		driver.get(baseUrl);
-		WebElement uploadElement = driver.findElement(By.id("uploadfile_0")); // using linkText, to click on browse
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+		driver.get("http://my.monsterindia.com/create_account.html");
+		// scroll to reach upload button
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		j.executeScript("scroll(0,100)");
+		// file path passed as parameter to StringSelection
+		StringSelection s = new StringSelection("/Users/mohammedalam/WebserviceAPI+Test+cases.xlsx");
+		// Clip-board copy
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s, null);
+		// identify element and click
+		WebElement ele = driver.findElement(By.xpath("//*[text()='Choose file']"));
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", ele);
 		
-		Actions action = new Actions(driver);
-		action.moveToElement(uploadElement);
-		action.click(uploadElement).build().perform(); // element
-		Thread.sleep(2000); 
-		StringSelection strSelection = new StringSelection("/Users/mohammedalam/WebserviceAPI+Test+cases.xlsx");
-		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-		clipboard.setContents(strSelection, null);
-		Robot robot = new Robot();
-		robot.delay(250);
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_V);
-		robot.keyRelease(KeyEvent.VK_V);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.delay(90);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-
+		// Robot object creation
+		Robot r = new Robot();
+		// pressing enter
+		r.keyPress(KeyEvent.VK_ENTER);
+		// releasing enter
+		r.keyRelease(KeyEvent.VK_ENTER);
+		// pressing ctrl+v
+		r.keyPress(KeyEvent.VK_CONTROL);
+		r.keyPress(KeyEvent.VK_V);
+		// releasing ctrl+v
+		r.keyRelease(KeyEvent.VK_CONTROL);
+		r.keyRelease(KeyEvent.VK_V);
+		// pressing enter
+		r.keyPress(KeyEvent.VK_ENTER);
+		// releasing enter
+		r.keyRelease(KeyEvent.VK_ENTER);
 	}
-
 }
