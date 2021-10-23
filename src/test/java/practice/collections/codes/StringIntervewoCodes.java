@@ -6,20 +6,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.testng.annotations.Test;
+
 public class StringIntervewoCodes {
 
-	//@Test
+	// @Test
 	public void countDuplicateString() {
 		String str = "smarttechitsulition";
 		Map<Character, Integer> charMap = new HashMap<Character, Integer>();
 		char[] arr = str.toCharArray();
-
 		for (char value : arr) {
-
 			if (Character.isAlphabetic(value)) {
 				if (charMap.containsKey(value)) {
 					charMap.put(value, charMap.get(value) + 1);
-
 				} else {
 					charMap.put(value, 1);
 				}
@@ -27,16 +26,16 @@ public class StringIntervewoCodes {
 		}
 		System.out.println(charMap);
 	}
-	
+
 	public static void main(String[] args) {
-		 String aa = "smarttechitsulition";
-	     String[] stringarray = aa.split("");
-	    Map<String , Long> map =  Arrays.stream(stringarray)
-	        .collect(Collectors.groupingBy(c -> c , Collectors.counting()));
-	        map.forEach( (k, v) -> System.out.println(k + " : "+ v)        );
+		String aa = "smarttechitsulition";
+		String[] stringarray = aa.split("");
+		Map<String, Long> map = Arrays.stream(stringarray)
+				.collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+		map.forEach((k, v) -> System.out.println(k + " : " + v));
 	}
-	
-	//@Test
+
+	// @Test
 	public static void stringLenth() {
 		String name = "alam"; // Initializing a String Object name
 		int length = name.length(); // Calling the inbuilt length() method
@@ -51,17 +50,25 @@ public class StringIntervewoCodes {
 		Collections.reverse(Arrays.asList(myArray));
 		System.out.println("Reversed Array:" + Arrays.asList(myArray));
 	}
-	
-	
-    //@Test
+
+	// @Test
 	public static void reverseWords() {
 		String[] myArray = { "one", "Two", "Three", "Four", "Five", "Six", "Seven" };
 		System.out.println("Original Array:" + Arrays.asList(myArray));
 		reverse(myArray);
-			  
-	    }
 
-	//@Test
+	}
+
+	@Test
+	public static void revarseString() {
+		String text = "Mohammed Alam";
+		for (int i = (text.length() - 1); i >= 0; i--) {
+			char reverse = text.charAt(i);
+			System.out.print(reverse);
+		}
+	}
+
+	// @Test
 	public static void reverseNum() {
 		int number = 987654, reverse = 0;
 		while (number != 0) {
@@ -71,7 +78,5 @@ public class StringIntervewoCodes {
 		}
 		System.out.println("The reverse of the given number is: " + reverse);
 	}
-	
-	
-	
+
 }
