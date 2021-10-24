@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="43" started-at="2021-10-23T16:51:20Z" finished-at="2021-10-23T16:51:20Z">
+  <suite name="Default suite" duration-ms="33" started-at="2021-10-23T22:06:12Z" finished-at="2021-10-23T22:06:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="43" started-at="2021-10-23T16:51:20Z" finished-at="2021-10-23T16:51:20Z">
-      <class name="practice.collections.codes.NumberSwappingprogram">
-        <test-method status="PASS" signature="SwapWithOutThardVariable()[pri:0, instance:practice.collections.codes.NumberSwappingprogram@394df057]" name="SwapWithOutThardVariable" duration-ms="12" started-at="2021-10-23T16:51:20Z" finished-at="2021-10-23T16:51:20Z">
+    <test name="Default test" duration-ms="33" started-at="2021-10-23T22:06:12Z" finished-at="2021-10-23T22:06:12Z">
+      <class name="practice.collections.codes.StringIntervewoCodes">
+        <test-method status="PASS" signature="reverseWords()[pri:0, instance:practice.collections.codes.StringIntervewoCodes@394df057]" name="reverseWords" duration-ms="9" started-at="2021-10-23T22:06:12Z" finished-at="2021-10-23T22:06:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SwapWithOutThardVariable -->
-      </class> <!-- practice.collections.codes.NumberSwappingprogram -->
+        </test-method> <!-- reverseWords -->
+      </class> <!-- practice.collections.codes.StringIntervewoCodes -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
