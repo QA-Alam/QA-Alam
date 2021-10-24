@@ -16,7 +16,7 @@ public class ListClass {
 	// Ans:- The collection in java a framework that an architecture to store and
 	// manipulate the group of object
 
-	// Differences between Collection, Collections & Collectors
+	// Differences between collection, Collections & Collectors
 	// Collection -> The Collection is an interface to store and manipulate the
 	// group of the object
 
@@ -25,7 +25,7 @@ public class ListClass {
 	// reverse the string/number of value, find out max, min value as well as many
 	// more operations
 
-	// Collectors -> Collectors is final class that extend the object class,Help
+	// Collectors -> collectors is final class that extend the object class,Help
 	// of collector we can remove the duplicate value & many more
 
 	// What is the List?
@@ -39,6 +39,8 @@ public class ListClass {
 	// ArrayList is non-synchronized, That means it's faster
 	// ArrayList flowing the index theory java
 	// ArrayList when add the new values increases the size 50%
+	
+	
 	// ArrayList faster then vector
 	// ArrayList slower then array
 
@@ -110,7 +112,13 @@ public class ListClass {
 			System.out.println(vactor.get(i));
 		}
 
-		// LinkedList flowing linked theurey
+		// LinkedList flowing linked theory java
+		// We can handle data structures as well
+		// Searching is slower but adding the element is faster
+		
+		// This is for stack
+		// 0 1 2 3 4 5 > LIFO
+		
 		LinkedList<String> linkList = new LinkedList<>();
 		linkList.add(0, "Rahaman");
 		linkList.add(1, "Alam");
@@ -139,7 +147,7 @@ public class ListClass {
 
 	}
 
-	// How to find out duplicate from array ? NY square, N square NYS square
+	// How to find out duplicate values from array ? NY square, N square NYS square
 	// @Test
 	public static void getDuplicateElement() {
 		String[] value = { "Java", "Selenium", "Maven", "TestNG", "Cucumber", "Java" };
@@ -159,7 +167,8 @@ public class ListClass {
 		List<Integer> num = Arrays.asList(100, 200, 300, 500, 700, 800);
 		int max = Collections.max(num);
 		System.out.println("Maximum value : " + max);
-
+		
+		
 		int min = Collections.min(num);
 		System.out.println("Minimum value : " + min);
 	}
@@ -198,8 +207,12 @@ public class ListClass {
 		}
 	}
 
-
-
+// It is a Collection, Algorithm  
+// What is the deference between arrayList & linkedList?
+// What is the deference between List & Set?
+// What is the deference between List & Map
+// What is the deference between HashMap & HashTable 
+// How to handle the data structures // By Map family 
 
 
 }

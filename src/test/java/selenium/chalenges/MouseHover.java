@@ -15,6 +15,8 @@ public class MouseHover {
 
 	public static void main(String[] args) {
 
+		// How to handle the mouse hover or hover over?
+
 		String exePath = "/Applications/chromedriver";
 		System.setProperty("webdriver.chrome.driver", exePath);
 		WebDriver driver = new ChromeDriver();
@@ -24,20 +26,29 @@ public class MouseHover {
 
 		System.out.println("demoqa webpage Displayed");
 
-		// Maximise browser window
+		// Maximize browser window
 		driver.manage().window().maximize();
 
 		// Adding wait
 		driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 
 		// Instantiate Action Class
+		// Action class
 		Actions actions = new Actions(driver);
 
 		// Retrieve WebElement 'Music' to perform mouse hover
 		WebElement menuOption = driver.findElement(By.xpath("//a[contains(text(),'Main Item 2')]"));
 
-		// Mouse hover menuOption 'Music'
 		actions.moveToElement(menuOption).perform();
+
+		// actions.click(menuOption).build().perform();
+		// actions.doubleClick(menuOption).build().perform();
+		// actions.clickAndHold(menuOption).build().perform();
+
+		// menuOption.click();
+		// Mouse hover menuOption 'Music'
+		// actions.moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Main Item 2')]"))).perform();
+
 		System.out.println("Done Mouse hover on 'Music' from Menu");
 
 		// Now Select 'Rock' from sub menu which has got displayed on mouse hover of
@@ -46,6 +57,7 @@ public class MouseHover {
 
 		// Mouse hover menuOption 'Rock'
 		actions.moveToElement(subMenuOption).perform();
+
 		System.out.println("Done Mouse hover on 'Rock' from Menu");
 
 		// Now , finally, it displays the desired menu list from which required option
@@ -53,6 +65,7 @@ public class MouseHover {
 		// Now Select 'Alternative' from sub menu which has got displayed on mouse hover
 		// of 'Rock'
 		WebElement selectMenuOption = driver.findElement(By.xpath("//a[contains(text(),'Sub Sub Item 1')]"));
+
 		selectMenuOption.click();
 		System.out.println("Selected 'Alternative' from Menu");
 
@@ -62,7 +75,6 @@ public class MouseHover {
 
 	@Test
 	public void mouseHoverTest() {
-
 		String exePath = "/Applications/chromedriver";
 		System.setProperty("webdriver.chrome.driver", exePath);
 		WebDriver driver = new ChromeDriver();
@@ -78,7 +90,7 @@ public class MouseHover {
 		actions.moveToElement(mouseHover).build().perform();
 		driver.findElement(By.linkText("Reload")).click();
 
-		// Close chrome driver.
+		// Close Chrome driver.
 		// driver.close();
 	}
 

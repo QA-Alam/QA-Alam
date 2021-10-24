@@ -7,7 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class DropDown {
+import com.ny.basepage.SupperClass;
+
+public class DropDown extends SupperClass{
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -22,7 +24,14 @@ public class DropDown {
         //Maximizing window
         driver.manage().window().maximize();
 
-        //Step#3- Selecting the dropdown element by locating its id
+        //Step#3- Selecting the drop down element by locating its id
+        // 1, Help with the select class we can handle the drop down menu
+        //  By selecting the value 1 = blue
+        //  By selecting index 
+        //  By selecting VisibleText = Blue
+        
+        // 2. I can handle drop down help with list interface
+        
         Select select = new Select(driver.findElement(By.id("oldSelectMenu")));
 
         //Step#4- Printing the options of the dropdown
@@ -32,24 +41,36 @@ public class DropDown {
         //Looping through the options and printing dropdown options
         System.out.println("The dropdown options are:");
         for(WebElement options: lst)
+        	
             System.out.println(options.getText());
 
         //Step#5- Selecting the option as 'Purple'-- selectByIndex
-        System.out.println("Select the Option by Index 4");
-        select.selectByIndex(4);
+        System.out.println("Select the Option by Index 1");
+        select.selectByIndex(1);
         System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
 
         //Step#6- Selecting the option as 'Magenta'-- selectByVisibleText
-        System.out.println("Select the Option by Text Magenta");
-        select.selectByVisibleText("Magenta");
-        System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
+        //System.out.println("Select the Option by Text Magenta");
+       // select.selectByVisibleText("Blue");
+       // System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
 
         //Step#7- Selecting an option by its value
-        System.out.println("Select the Option by value 6");
-        select.selectByValue("6");
-        System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
+       // System.out.println("Select the Option by value 6");
+       // select.selectByValue("1");
+       // System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
 
         driver.quit();
     }
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
 
 }

@@ -4,7 +4,7 @@ public class PrimeNumber {
 
 	public static void main(String[] args) {
 
-		int num = 12;
+		int num = 39;
 		for (int i = 2; i < num / 2; i++) {
 			if (num % i == 0) {
 				System.out.println(" Not prime number::" + num);
@@ -12,7 +12,7 @@ public class PrimeNumber {
 				break;
 			} else {
 				System.out.println("--------------");
-				System.out.println("prime::" + num);
+				System.out.println("prime number ::" + num);
 			}
 		}
 

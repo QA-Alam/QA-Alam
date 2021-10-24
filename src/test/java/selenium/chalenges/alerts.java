@@ -19,12 +19,25 @@ public class alerts {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click()", element);
 		
 		Thread.sleep(5000);
+		
+      // How to handle the alert or pop-up windows and alert notification 	
+				
 		Alert confirmationAlert = driver.switchTo().alert();
-		String alertText = confirmationAlert.getText();
-		System.out.println("Alert text is " + alertText);
-		confirmationAlert.sendKeys("uiuwegfuwegui");
-		confirmationAlert.sendKeys("uiuwegfuwegui");
+		
+		//String alertText = confirmationAlert.getText();
+			
+		//System.out.println("Alert text is " + alertText);
+		
+		
 		confirmationAlert.accept();
-		confirmationAlert.dismiss();
+		
+		//confirmationAlert.sendKeys("uiuwegfuwegui");
+	
+		// What  Q
+		// Why -> Project 
+		// How  *****
+	
+		//confirmationAlert.sendKeys("uiuwegfuwegui");
+		//confirmationAlert.dismiss();
 	}
 }

@@ -35,6 +35,8 @@ public class StringIntervewoCodes {
 		map.forEach((k, v) -> System.out.println(k + " : " + v));
 	}
 
+	
+	
 	// @Test
 	public static void stringLenth() {
 		String name = "alam"; // Initializing a String Object name
@@ -45,21 +47,19 @@ public class StringIntervewoCodes {
 		System.out.printf("'m' is at index %d\n", index);
 	}
 
-	/* function reverses the elements of the array */
-	static void reverse(String myArray[]) {
-		Collections.reverse(Arrays.asList(myArray));
-		System.out.println("Reversed Array:" + Arrays.asList(myArray));
-	}
 
-	// @Test
+	 @Test
 	public static void reverseWords() {
 		String[] myArray = { "one", "Two", "Three", "Four", "Five", "Six", "Seven" };
 		System.out.println("Original Array:" + Arrays.asList(myArray));
-		reverse(myArray);
+		
+		Collections.reverse(Arrays.asList(myArray));
+		System.out.println("Reversed Array:" + Arrays.asList(myArray));
+		
 
 	}
 
-	@Test
+	//@Test
 	public static void revarseString() {
 		String text = "Mohammed Alam";
 		for (int i = (text.length() - 1); i >= 0; i--) {

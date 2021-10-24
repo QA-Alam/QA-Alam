@@ -49,7 +49,7 @@ public class CommonUtil extends SupperClass {
 	}
 
 	public static String getScreenshot(WebDriver driver, Scenario scenario) {
-		
+
 		String screenshotName = scenario.getName().replaceAll(" ", "_");
 		String dateName = new SimpleDateFormat("MM.dd.yyyy-hh.mm.ss").format(new Date());
 		TakesScreenshot ts = (TakesScreenshot) driver;
@@ -110,7 +110,7 @@ public class CommonUtil extends SupperClass {
 
 	public static void scrollDown(WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1000)",element);
+		js.executeScript("window.scrollBy(0,1000)", element);
 	}
 
 	public static void scrollView(String Element) {
@@ -153,8 +153,6 @@ public class CommonUtil extends SupperClass {
 		System.out.println("Alam" + randomestring() + "@gmail.com");
 		System.out.println("My Phone Number is : " + randomNumeric());
 	}
-
-
 
 	public void selectTheCheckBoxfromList(WebElement element, String valueToSelect) {
 		List<WebElement> allOptions = element.findElements(By.tagName("input"));
@@ -318,56 +316,64 @@ public class CommonUtil extends SupperClass {
 		Actions action = new Actions(driver);
 		return action;
 	}
-	
-	 public static void sendkeys(String text) {
-		  try {
-		    Robot robot = new Robot();
-		    String lol = text.toUpperCase();
-		    for(int i=0;i<lol.length();i++) {
-		      robot.keyPress(Character.getNumericValue(lol.charAt(i)));
-		    }
-		  } catch(java.awt.AWTException exc) {
-		    System.out.println("error");
-		  }
+
+	public static void sendkeys(String text) {
+		try {
+			Robot robot = new Robot();
+			String lol = text.toUpperCase();
+			for (int i = 0; i < lol.length(); i++) {
+				robot.keyPress(Character.getNumericValue(lol.charAt(i)));
+			}
+		} catch (java.awt.AWTException exc) {
+			System.out.println("error");
 		}
-	 
-	 public static void moveMouse(int x, int y){
-		  try{
-		    Robot robot = new Robot();
-		    robot.mouseMove(x, y);
-		  }catch(Exception e){
-		    System.out.println("Error");
-		  }
+	}
+
+	public static void moveMouse(int x, int y) {
+		try {
+			Robot robot = new Robot();
+			robot.mouseMove(x, y);
+		} catch (Exception e) {
+			System.out.println("Error");
 		}
-	 
-	
+	}
+
 	public void uploadFile(String filepath) {
-		    try {
-		        //put file path in a clip-board
-		        StringSelection strSel = new StringSelection(filepath);
-		        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(strSel, null);
-		        //imitate mouse event ENTER/COPY/PASTE
-		        Robot robot = new Robot();
-		        robot.keyPress(KeyEvent.VK_ENTER);
-		        robot.keyRelease(KeyEvent.VK_ENTER);
-		        robot.keyPress(KeyEvent.VK_CONTROL);
-		        robot.keyPress(KeyEvent.VK_V);
-		        robot.keyRelease(KeyEvent.VK_V);
-		        robot.keyRelease(KeyEvent.VK_CONTROL);
-		        robot.keyPress(KeyEvent.VK_ENTER);
-		        robot.keyRelease(KeyEvent.VK_ENTER);
-		        logger.info("Success to upload file: " + filepath);
-		    } catch (Exception e) {
-		        e.printStackTrace();
-		    }
+		try {
+			// put file path in a clip-board
+			StringSelection strSel = new StringSelection(filepath);
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(strSel, null);
+			// imitate mouse event ENTER/COPY/PASTE
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_V);
+			robot.keyRelease(KeyEvent.VK_V);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			logger.info("Success to upload file: " + filepath);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-	 public void testUpload() throws InterruptedException
-		{
-			driver.get("");
-			WebElement element = driver.findElement(By.name("uploadfile"));
-			element.click();
-			uploadFile("path to the file");
-			Thread.sleep(2000);
+	}
+
+	public void testUpload() throws InterruptedException {
+		driver.get("");
+		WebElement element = driver.findElement(By.name("uploadfile"));
+		element.click();
+		uploadFile("path to the file");
+		Thread.sleep(2000);
+	}
+
+	public static void handleDropDownMenu(String dropDownValues) {
+		List<WebElement> data = driver.findElements(By.tagName("option"));
+		for (WebElement text : data) {
+			if (text.getText().equals(dropDownValues)) {
+			}
+			text.click();
+			break;
 		}
-		
+	}
 }
