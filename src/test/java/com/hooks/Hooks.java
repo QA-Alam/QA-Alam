@@ -9,6 +9,8 @@ import cucumber.api.java.Before;
 
 public class Hooks extends SupperClass {
 
+
+
 	public Scenario scenario;
 	ZooplaElementsPage pf;
 

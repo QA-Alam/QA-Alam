@@ -10,6 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 public class ExcelUtiliti {
+	
 	// Constants variable
 	final static String excelData = "./ZooplaTestData/TestData.xlsx"; // Excel location
 
@@ -20,6 +21,8 @@ public class ExcelUtiliti {
 		// class)
 		FileInputStream file = new FileInputStream(excelData);
 
+		// FileOutputStream
+		
 		// We have to handle the excel location by XSSFWorkbook object (Is is from
 		// Apache POI class)
 		XSSFWorkbook workbook = new XSSFWorkbook(file);

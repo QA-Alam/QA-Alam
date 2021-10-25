@@ -31,24 +31,30 @@ public class LoginStepDef extends SupperClass {
 	@When("^User able to click on the login button$")
 	public void user_able_to_click_on_the_login_button() throws InterruptedException {
 		logger.info("******** User able to click on the login button *********");
-		WaitHelper.waitForElement(pf.getClickSingButton(), 10);
-		CommonUtil.highLighterMethod(driver, pf.getClickSingButton());
-
-		// CommonUtil.clickWithJS(pf.getClickSingButton());
-		pf.getClickSingButton().click();
+		try {
+			WaitHelper.waitForElement(pf.getClickSingButton(), 10);
+			CommonUtil.highLighterMethod(driver, pf.getClickSingButton());
+			pf.getClickSingButton().click();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 
 	}
 
 	@When("^User enter the userName \"([^\"]*)\" and password \"([^\"]*)\"$")
 	public void user_enter_the_userName_and_password(String userName, String Pwd) throws Exception {
 		logger.info("******** User enter the userName *********");
-		WaitHelper.waitForElement(pf.getEnterUserName(), 20);
-		CommonUtil.highLighterMethod(driver, pf.getEnterUserName());
-		pf.getEnterUserName().sendKeys(userName);
-		logger.info("******** User enter the Password *********");
-		WaitHelper.waitForElement(pf.getEnterPassword(), 20);
-		CommonUtil.highLighterMethod(driver, pf.getEnterPassword());
-		pf.getEnterPassword().sendKeys(Pwd);
+		try {
+			WaitHelper.waitForElement(pf.getEnterUserName(), 20);
+			CommonUtil.highLighterMethod(driver, pf.getEnterUserName());
+			pf.getEnterUserName().sendKeys(userName);
+			logger.info("******** User enter the Password *********");
+			WaitHelper.waitForElement(pf.getEnterPassword(), 20);
+			CommonUtil.highLighterMethod(driver, pf.getEnterPassword());
+			pf.getEnterPassword().sendKeys(Pwd);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 
 	}
 

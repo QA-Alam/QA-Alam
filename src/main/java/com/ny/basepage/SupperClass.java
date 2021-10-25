@@ -29,7 +29,6 @@ public class SupperClass {
 	public SupperClass() {
 		logger = Logger.getLogger("Test Lead Alam"); // Added logger
 		PropertyConfigurator.configure("Log4j.properties");// Added logger
-
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/com/usa/config/Config.properties");
@@ -42,7 +41,7 @@ public class SupperClass {
 	}
 
 	
-	public static void initialization() throws InterruptedException { // setUP();	
+	public static void initialization()  { // setUP();	
 		String browserName = prop.getProperty("browser");
 		
 		if (browserName.equals("chrome")) {

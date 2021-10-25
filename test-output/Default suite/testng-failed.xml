@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="practice.collections.codes.ArreyClass">
+      <class name="practice.collections.codes.ExceptionTest">
         <methods>
-          <include name="StringArreyDeclaration"/>
+          <include name="validate_Age"/>
         </methods>
-      </class> <!-- practice.collections.codes.ArreyClass -->
+      </class> <!-- practice.collections.codes.ExceptionTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

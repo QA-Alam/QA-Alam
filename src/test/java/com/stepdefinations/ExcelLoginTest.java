@@ -15,13 +15,14 @@ public class ExcelLoginTest extends SupperClass{
 		ArrayList<String> userName = ExcelUtiliti.readExcelData(0);
 		ArrayList<String> password = ExcelUtiliti.readExcelData(1);
 		
-		for (int i = 0; i < userName.size(); i++) {
+		for (int i = 0; i < userName.size(); i++) {	
 			
+			driver.findElement(By.xpath("//*[@id='__next']/div[1]/div/div/div/header/div/div/div[1]/div[2]/ul/li[4]/a/div/p")).click();
 			driver.findElement(By.xpath("//*[@id='input-email-address']")).sendKeys(userName.get(i));
 			driver.findElement(By.xpath("//*[@id='input-password']")).sendKeys(password.get(i));
 			driver.findElement(By.xpath("//*[@data-testid='signin-button']")).click();
 			Thread.sleep(5000);
-			//driver.close();
+			driver.close();
 			driver.quit();
 
 		}
