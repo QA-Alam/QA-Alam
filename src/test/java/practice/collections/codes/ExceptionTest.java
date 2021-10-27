@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 
 public class ExceptionTest {
 
+	// @Test
 	public static void ArithmeticException() {
 		int a = 0, b = 10;
 		int c = 0;
@@ -20,6 +21,8 @@ public class ExceptionTest {
 		System.out.println("Value of c :" + c);
 	}
 
+	// @Test
+	@SuppressWarnings("null")
 	public static void NullPointerException() {
 		try {
 			String a = null; // null value
@@ -29,38 +32,40 @@ public class ExceptionTest {
 		}
 	}
 
+	// @Test
+
 	public static void FileNotFoundException() {
 		try {
 			// Following file does not exist
-			File file = new File("E://file.txt");
+			File file = new File("E://file.txt");		
 			FileReader fr = new FileReader(file);
 		} catch (FileNotFoundException e) {
 			System.out.println("File does not exist");
 		}
 	}
 
+	@Test
 	public static void NumberFormatException() {
 		try {
-			// "akki" is not a number
-			int num = Integer.parseInt("akki");
-
+			// "alam" is not a number
+			int num = Integer.parseInt("alam");
 			System.out.println(num);
 		} catch (NumberFormatException e) {
 			System.out.println("Number format exception");
 		}
 	}
 
+	// @Test
 	public static void ArrayIndexOutOfBoundsException() {
 		try {
 			int a[] = new int[5];
-			a[6] = 9; // accessing 7th element in an array of
-						// size 5
+			a[6] = 9; // accessing 7th element in an array of size 5
 		} catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("Array Index is Out Of Bounds");
 		}
 	}
 
-	@Test
+	// @Test
 	public static void tryCatch() {
 		// Main try block
 		try {
@@ -96,28 +101,28 @@ public class ExceptionTest {
 		int a[] = new int[2];
 		try {
 			System.out.println("Access element three :" + a[3]);
-
 		} catch (ArrayIndexOutOfBoundsException e) {
-
 			System.out.println("Exception thrown :" + e);
-
 		} finally {
 			a[0] = 6;
 			System.out.println("First element value: " + a[0]);
 			System.out.println("The finally statement is executed");
 		}
 	}
-	static void validate_Age(int age){  
-	     //if specified age is < 18, throw ArithmeticException
-	     if(age < 18)  {    	 
-	      throw new ArithmeticException("Not eligible to vote and drive!!");
-	     } else   //print the message
-	      System.out.println("Eligible to vote and drive!!");  
-	   }  
-	
-	   public static void main(String args[]){  
-	      //call validate_Age method
-	      validate_Age(10);  
-	     
-	  }  
-	}  
+
+	// @Test
+	static void validate_Age(int age) {
+		// if specified age is < 18, throw ArithmeticException
+		if (age < 18) {
+			throw new ArithmeticException("Not eligible to vote and drive!!");
+		} else // print the message
+			System.out.println("Eligible to vote and drive!!");
+	}
+
+	// @Test
+	public static void main(String args[]) {
+		// call validate_Age method
+		validate_Age(10);
+
+	}
+}
