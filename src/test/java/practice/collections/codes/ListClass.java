@@ -206,6 +206,16 @@ public class ListClass {
 			System.out.println("after sort the data : " + data);
 		}
 	}
+	    public static void main(String args[])
+	    {
+	        String str = "geekss for geekss";
+	        String[] arrOfStr = str.split(" ", 3);
+	 
+	        for (String a : arrOfStr)
+	            System.out.println(a);
+	    }
+	}
+	
 
 // It is a Collection, Algorithm  
 // What is the deference between arrayList & linkedList?
@@ -215,4 +225,4 @@ public class ListClass {
 // How to handle the data structures // By Map family 
 
 
-}
+

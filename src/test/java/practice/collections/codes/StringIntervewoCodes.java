@@ -3,6 +3,7 @@ package practice.collections.codes;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -35,8 +36,6 @@ public class StringIntervewoCodes {
 		map.forEach((k, v) -> System.out.println(k + " : " + v));
 	}
 
-	
-	
 	// @Test
 	public static void stringLenth() {
 		String name = "alam"; // Initializing a String Object name
@@ -47,19 +46,17 @@ public class StringIntervewoCodes {
 		System.out.printf("'m' is at index %d\n", index);
 	}
 
-
-	 @Test
+	// @Test
 	public static void reverseWords() {
 		String[] myArray = { "one", "Two", "Three", "Four", "Five", "Six", "Seven" };
 		System.out.println("Original Array:" + Arrays.asList(myArray));
-		
+
 		Collections.reverse(Arrays.asList(myArray));
 		System.out.println("Reversed Array:" + Arrays.asList(myArray));
-		
 
 	}
 
-	//@Test
+	// @Test
 	public static void revarseString() {
 		String text = "Mohammed Alam";
 		for (int i = (text.length() - 1); i >= 0; i--) {
@@ -79,4 +76,73 @@ public class StringIntervewoCodes {
 		System.out.println("The reverse of the given number is: " + reverse);
 	}
 
+	// @Test
+	public static void splitTheWord() {
+		{
+			String str = "Mohammed J Alam";
+			String[] arrOfStr = str.split(" ");
+
+			for (String a : arrOfStr)
+
+				System.out.println(a);
+		}
+	}
+
+	// @Test
+	public static void splitTheSentence() {
+		String Str = new String("Welcome-to-String-Tutorial.");
+		System.out.println("Return Value :");
+
+		for (String retval : Str.split("-")) {
+			System.out.println(retval);
+		}
+	}
+
+	// @Test
+	// How to count string words
+	public static void getCharCount() {
+		String exampleString = "This is just a sample string";
+		int stringLength = exampleString.length();
+		System.out.println("String length: " + stringLength);
+		int stringLengthWithoutSpaces = exampleString.replace(" ", "").length();
+		System.out.println("String length without counting whitespaces: " + stringLengthWithoutSpaces);
+	}
+
+	// @Test
+	// How to count char from strings
+	public static void getCharCountWOrd() {
+		String exampleString = "This is just a sample string";
+		int totalCharacters = 0;
+		char temp;
+		for (int i = 0; i < exampleString.length(); i++) {
+			temp = exampleString.charAt(i);
+			if (temp == 's')
+				totalCharacters++;
+		}
+		System.out.println("i appears " + totalCharacters + " times in exampleString");
+	}
+
+	// @Test
+	// How to count char from strings
+	public static void getToVerifyTheWord() {
+		String[] alphabet = new String[] { "A", "B", "C" };
+		// Convert String Array to List
+		List<String> list = Arrays.asList(alphabet);
+		if (list.contains("A")) {
+			System.out.println("Hello A");
+		}
+	}
+
+	@Test
+	// How to count char from strings
+	public void convartIntToString() {
+		int d = 1234;
+		String str = new Integer(d).toString();
+		System.out.println("String str = " + str);
+
+		// How to convert String to int
+		String strs = "0111";
+		int t = Integer.parseInt(strs);
+		System.out.println("Int strs = "+ t);
+	}
 }
