@@ -133,7 +133,7 @@ public class StringIntervewoCodes {
 		}
 	}
 
-	@Test
+	// @Test
 	// How to count char from strings
 	public void convartIntToString() {
 		int d = 1234;
@@ -143,6 +143,29 @@ public class StringIntervewoCodes {
 		// How to convert String to int
 		String strs = "0111";
 		int t = Integer.parseInt(strs);
-		System.out.println("Int strs = "+ t);
+		System.out.println("Int strs = " + t);
+	}
+
+	@Test
+	// Difference between == and .equals() method in Java?
+	// Ans: In general, both equals() and “==” operator in Java are used to
+	// compare objects to check equality but here are some of the differences
+	// between the two:
+
+	public void andEqualDifference() {
+		String s1 = "HELLO";
+		String s2 = "HELLO";
+		System.out.println("Variable & Variable is true if == sign : " + (s1 == s2)); // true
+		System.out.println("Variable & Variable is true if equal method : " + s1.equals(s2)); // true
+
+		String s3 = new String("HELLO");
+		System.out.println("Variable & Object compare is false if == sign : " + (s1 == s3)); // false
+
+		System.out.println("Variable & Object is true if equal method : " + s1.equals(s3)); // true
+
+		String s5 = new String("ALAM");
+		String s6 = new String("ALAM");
+		System.out.println("Object to object equal is true " + s5.equals(s6)); // true
+		System.out.println("Object to object equal is false " + (s5 == s6)); // true
 	}
 }
