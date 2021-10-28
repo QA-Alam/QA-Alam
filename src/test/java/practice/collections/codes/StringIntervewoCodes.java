@@ -108,7 +108,7 @@ public class StringIntervewoCodes {
 		System.out.println("String length without counting whitespaces: " + stringLengthWithoutSpaces);
 	}
 
-	// @Test
+	@Test
 	// How to count char from strings
 	public static void getCharCountWOrd() {
 		String exampleString = "This is just a sample string";
@@ -116,7 +116,7 @@ public class StringIntervewoCodes {
 		char temp;
 		for (int i = 0; i < exampleString.length(); i++) {
 			temp = exampleString.charAt(i);
-			if (temp == 's')
+			if (temp == 'j')
 				totalCharacters++;
 		}
 		System.out.println("i appears " + totalCharacters + " times in exampleString");
@@ -146,7 +146,7 @@ public class StringIntervewoCodes {
 		System.out.println("Int strs = " + t);
 	}
 
-	@Test
+	//@Test
 	// Difference between == and .equals() method in Java?
 	// Ans: In general, both equals() and “==” operator in Java are used to
 	// compare objects to check equality but here are some of the differences
@@ -166,6 +166,6 @@ public class StringIntervewoCodes {
 		String s5 = new String("ALAM");
 		String s6 = new String("ALAM");
 		System.out.println("Object to object equal is true " + s5.equals(s6)); // true
-		System.out.println("Object to object equal is false " + (s5 == s6)); // true
+		System.out.println("Object to object == is false " + (s5 == s6)); // false
 	}
 }
