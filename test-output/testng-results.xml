@@ -2,15 +2,15 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="58" started-at="2021-10-28T01:47:05Z" finished-at="2021-10-28T01:47:05Z">
+  <suite name="Default suite" duration-ms="55" started-at="2021-10-28T02:25:12Z" finished-at="2021-10-28T02:25:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="58" started-at="2021-10-28T01:47:05Z" finished-at="2021-10-28T01:47:05Z">
+    <test name="Default test" duration-ms="55" started-at="2021-10-28T02:25:12Z" finished-at="2021-10-28T02:25:12Z">
       <class name="practice.collections.codes.StringIntervewoCodes">
-        <test-method status="PASS" signature="andEqualDifference()[pri:0, instance:practice.collections.codes.StringIntervewoCodes@394df057]" name="andEqualDifference" duration-ms="12" started-at="2021-10-28T01:47:05Z" finished-at="2021-10-28T01:47:05Z">
+        <test-method status="PASS" signature="getCharCountWOrd()[pri:0, instance:practice.collections.codes.StringIntervewoCodes@394df057]" name="getCharCountWOrd" duration-ms="16" started-at="2021-10-28T02:25:12Z" finished-at="2021-10-28T02:25:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- andEqualDifference -->
+        </test-method> <!-- getCharCountWOrd -->
       </class> <!-- practice.collections.codes.StringIntervewoCodes -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
