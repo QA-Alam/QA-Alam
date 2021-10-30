@@ -22,14 +22,14 @@ public class alerts {
 		
       // How to handle the alert or pop-up windows and alert notification 	
 				
-		Alert confirmationAlert = driver.switchTo().alert();
+		Alert abc = driver.switchTo().alert();
 		
 		//String alertText = confirmationAlert.getText();
 			
 		//System.out.println("Alert text is " + alertText);
 		
 		
-		confirmationAlert.accept();
+		abc.accept();
 		
 		//confirmationAlert.sendKeys("uiuwegfuwegui");
 	

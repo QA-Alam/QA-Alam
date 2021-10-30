@@ -1,7 +1,6 @@
 package selenium.chalenges;
 
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -13,7 +12,7 @@ import org.testng.annotations.Test;
 import com.ny.basepage.SupperClass;
 
 public class crossBrowserTesting extends SupperClass {
-	WebDriver driver;
+	// WebDriver driver;
 
 	/**
 	 * This function will execute before each Test tag in testng.xml
@@ -22,7 +21,7 @@ public class crossBrowserTesting extends SupperClass {
 	 * @throws Exception
 	 */
 	@BeforeTest
-	@Parameters("browser")
+	@Parameters("browser") // This is testNG advance annotation
 	public void setup(String browser) throws Exception {
 		if (browser.equalsIgnoreCase("Safari")) {
 			logger.info("******** Test Execute on Safari Browser  *********");
@@ -49,6 +48,8 @@ public class crossBrowserTesting extends SupperClass {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		// driver.findElement(By.xpath("//*[text()='Elements']")).click();
 		Thread.sleep(5000);
+		
+		// This is my test cases all the operations 
 	}
 
 	@AfterClass

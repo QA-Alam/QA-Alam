@@ -6,11 +6,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
 
 public class CheckBoxOperations {
 
-	public static void Element_isSelected() {
+	//@Test
+	public static void Element_isSelected() throws InterruptedException {
 		String exePath = "/Applications/chromedriver";
 		System.setProperty("webdriver.chrome.driver", exePath);
 		WebDriver driver = new ChromeDriver();
@@ -26,6 +26,8 @@ public class CheckBoxOperations {
 			option3.click();
 
 			System.out.println(option3.getText());
+
+			Thread.sleep(5000);
 		}
 	}
 
@@ -46,7 +48,7 @@ public class CheckBoxOperations {
 		}
 	}
 
-	@Test
+	// @Test
 	public static void SelectAllElement() {
 
 		String exePath = "/Applications/chromedriver";
@@ -65,7 +67,7 @@ public class CheckBoxOperations {
 		// driver.close();
 	}
 
-	public static void SelectIsDisplayed() {
+	public static void SelectIsDisplayed() throws InterruptedException {
 
 		String exePath = "/Applications/chromedriver";
 		System.setProperty("webdriver.chrome.driver", exePath);
@@ -79,6 +81,8 @@ public class CheckBoxOperations {
 
 		if (!isSelected) {
 			option3.click();
+
+			Thread.sleep(3000);
 		}
 	}
 }
