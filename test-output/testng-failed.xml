@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [TestSuite]" parallel="tests">
+  <test thread-count="3" name="EdgeTest(failed)" parallel="tests">
+    <parameter name="browser" value="Edge"/>
     <classes>
-      <class name="practice.collections.codes.secondHighestNum">
+      <class name="selenium.chalenges.crossBrowserTesting">
         <methods>
-          <include name="getHighestNum"/>
+          <include name="login"/>
+          <include name="afterTest"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- practice.collections.codes.secondHighestNum -->
+      </class> <!-- selenium.chalenges.crossBrowserTesting -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- EdgeTest(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->

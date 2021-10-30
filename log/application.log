@@ -501,3 +501,9 @@
 2021-10-27 13:53:52,644 [main] INFO Test Lead Alam - 
 2021-10-27 13:53:52,647 [main] INFO Test Lead Alam - ...........END AUTOMATION.............
 2021-10-27 13:53:52,648 [main] INFO Test Lead Alam - 
+2021-10-29 22:07:46,729 [TestNG-tests-1] INFO Test Lead Alam - ******** Test Execute on Chrome Browser  *********
+2021-10-29 22:07:46,729 [TestNG-tests-3] INFO Test Lead Alam - ******** Test Execute on Safari Browser  *********
+2021-10-29 22:07:46,729 [TestNG-tests-2] INFO Test Lead Alam - ******** Test Execute on Edge Browser  *********
+2021-10-30 16:29:32,402 [TestNG-tests-1] INFO Test Lead Alam - ******** Test Execute on Chrome Browser  *********
+2021-10-30 16:29:32,402 [TestNG-tests-2] INFO Test Lead Alam - ******** Test Execute on Edge Browser  *********
+2021-10-30 16:29:32,402 [TestNG-tests-3] INFO Test Lead Alam - ******** Test Execute on Safari Browser  *********
