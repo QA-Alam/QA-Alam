@@ -41,7 +41,7 @@ import java.awt.datatransfer.StringSelection;
 public class CommonUtil extends SupperClass {
 	private static final String ACTION = "arguments[0].click();";
 	static String projectPath = "user.dir";
-	static WebDriver driver;
+	//static WebDriver driver;
 
 	public static void highLighterMethod(WebDriver driver, WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -368,12 +368,13 @@ public class CommonUtil extends SupperClass {
 	}
 
 	public static void handleDropDownMenu(String dropDownValues) {
-		List<WebElement> data = driver.findElements(By.tagName("option"));
-		for (WebElement text : data) {
-			if (text.getText().equals(dropDownValues)) {
+		WebDriver driver = null;
+		
+	  	List<WebElement> list = driver.findElements(By.xpath("//*[@id='oldSelectMenu']/option"));
+			for (WebElement option : list) {
+				if (option.getText().contains("White")) {
+					option.click();
+					break;
+				}
 			}
-			text.click();
-			break;
-		}
-	}
-}
+}}

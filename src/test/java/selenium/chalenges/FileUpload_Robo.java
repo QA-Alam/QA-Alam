@@ -56,7 +56,7 @@ public class FileUpload_Robo {
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", ele);
 		
-		// Robot object creation
+		// Robot object creation. Automation will fail with robot class in Jenkins
 		Robot r = new Robot();
 		// pressing enter
 		r.keyPress(KeyEvent.VK_ENTER);

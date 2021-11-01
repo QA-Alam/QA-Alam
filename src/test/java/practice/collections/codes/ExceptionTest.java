@@ -22,7 +22,6 @@ public class ExceptionTest {
 	}
 
 	// @Test
-	@SuppressWarnings("null")
 	public static void NullPointerException() {
 		try {
 			String a = null; // null value
@@ -33,11 +32,10 @@ public class ExceptionTest {
 	}
 
 	// @Test
-
 	public static void FileNotFoundException() {
 		try {
 			// Following file does not exist
-			File file = new File("E://file.txt");		
+			File file = new File("E://filelkjh'oi.txt");
 			FileReader fr = new FileReader(file);
 		} catch (FileNotFoundException e) {
 			System.out.println("File does not exist");

@@ -8,14 +8,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import com.ny.basepage.SupperClass;
+import com.utility.CommonUtil;
 
 public class DropDown extends SupperClass{
-
+	static WebDriver driver;
     public static void main(String[] args) throws InterruptedException {
 
 		String exePath = "/Applications/chromedriver";
 		System.setProperty("webdriver.chrome.driver", exePath);
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		
 
         //Step#2- Launching URL
@@ -31,28 +32,33 @@ public class DropDown extends SupperClass{
         //  By selecting VisibleText = Blue
         
         // 2. I can handle drop down help with list interface
+        			
+        //Thread.sleep(5000);
         
-        Select select = new Select(driver.findElement(By.id("oldSelectMenu")));
+        //Select select = new Select(driver.findElement(By.id("oldSelectMenu")));
 
+        CommonUtil.handleDropDownMenu("Blue");
+        
+        
         //Step#4- Printing the options of the dropdown
         //Get list of web elements
-        List<WebElement> lst = select.getOptions();
+   /*     List<WebElement> lst = select.getOptions();
 
         //Looping through the options and printing dropdown options
         System.out.println("The dropdown options are:");
         for(WebElement options: lst)
         	
-            System.out.println(options.getText());
+            System.out.println(options.getText());*/
 
         //Step#5- Selecting the option as 'Purple'-- selectByIndex
-        System.out.println("Select the Option by Index 1");
-        select.selectByIndex(1);
-        System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
+       // System.out.println("Select the Option by Index 1");
+       // select.selectByIndex(1);
+        //System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
 
         //Step#6- Selecting the option as 'Magenta'-- selectByVisibleText
-        //System.out.println("Select the Option by Text Magenta");
-       // select.selectByVisibleText("Blue");
-       // System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
+       // System.out.println("Select the Option by Text Magenta");
+       //select.selectByVisibleText("Blue");
+      // System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
 
         //Step#7- Selecting an option by its value
        // System.out.println("Select the Option by value 6");
@@ -64,13 +70,12 @@ public class DropDown extends SupperClass{
     
     
     
-    
-
-    
-    
-    
-    
-    
-    
-
 }
+
+    
+    
+    
+    
+    
+    
+

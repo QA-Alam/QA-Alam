@@ -43,6 +43,24 @@ public class ListClass {
 	
 	// ArrayList faster then vector
 	// ArrayList slower then array
+	
+	
+	
+	// Array length is fixed
+	// Array is an object as well non-primitive data type
+	// Array is faster 
+	// Single diminution & multidiminution array
+	
+	
+	
+	// ArrayList is dynamic 
+	// ArrayList is a class and implements from list interface 
+	// array list is slower then array 
+	// ArrayList allow null value as much require
+	// ArrayList allow duplicate value as much require
+	// ArrayList when we added new values memory will increase 50%
+	// ArrayList can handle 
+	
 
 	// Generic style
 	public static void mains() {
@@ -224,5 +242,8 @@ public class ListClass {
 // What is the deference between HashMap & HashTable 
 // How to handle the data structures // By Map family 
 
+// 4. Difference between Array and Array List.
+// 5. Difference between List and Set.
+// 6. Difference between Hash table and HashMap.
 
 

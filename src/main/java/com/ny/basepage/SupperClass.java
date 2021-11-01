@@ -34,9 +34,11 @@ public class SupperClass {
 			FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/com/usa/config/Config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			
+			System.out.println(e.getMessage());
+	
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
