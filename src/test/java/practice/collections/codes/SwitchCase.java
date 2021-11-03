@@ -1,8 +1,8 @@
 package practice.collections.codes;
 
 public class SwitchCase {
-	public static void main(String[] args) {
-		int day = 1;
+	public static void getDays(int days) {
+		int day = days;
 		String dayString;
 
 		// switch statement with int data type
@@ -33,4 +33,28 @@ public class SwitchCase {
 		}
 		System.out.println(dayString);
 	}
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		SwitchCase.getDays(2);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

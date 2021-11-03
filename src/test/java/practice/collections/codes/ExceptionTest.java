@@ -42,7 +42,7 @@ public class ExceptionTest {
 		}
 	}
 
-	@Test
+	// @Test
 	public static void NumberFormatException() {
 		try {
 			// "alam" is not a number
@@ -63,35 +63,27 @@ public class ExceptionTest {
 		}
 	}
 
-	// @Test
+	@Test
 	public static void tryCatch() {
-		// Main try block
 		try {
-			// try block1
-			try {
-				System.out.println("Try Block1");
-				int num = 15 / 0;
-				System.out.println(num);
-			} catch (ArithmeticException e1) {
-				System.out.println(e1.getMessage());
-			}
-			// try block2
-			try {
-				System.out.println("Try Block2");
-				int num = 100 / 0;
-				System.out.println(num);
-			} catch (ArrayIndexOutOfBoundsException e2) {
-				System.out.println(e2.getMessage());
-			}
-			System.out.println("General statement after Block1 and Block2");
-		} catch (ArithmeticException e3) {
-			System.out.println("Main Block Arithmetic Exception");
-		} catch (ArrayIndexOutOfBoundsException e4) {
-			System.out.println("Main Block ArrayIndexOutOfBoundsException");
-		} catch (Exception e5) {
-			System.out.println("Main Block General Exception");
+			int a = 0, b = 10;
+			int c = 0;
+			c = b / a;
+		} catch (ArithmeticException e) {
+			System.out.println("Arithmetic Exception occurs");
+
+			int a[] = new int[5];
+			a[6] = 9; // accessing 7th element in an array of size 5
+		} catch (ArrayIndexOutOfBoundsException e) {
+
+			System.out.println("ArrayIndexOutOfBounds Exception occurs");
 		}
-		System.out.println("Code after Nested Try Block");
+
+		catch (Exception e) {
+
+			System.out.println("Parent Exception occurs");
+		}
+		System.out.println("rest of the code");
 	}
 
 	// @Test
@@ -99,8 +91,10 @@ public class ExceptionTest {
 		int a[] = new int[2];
 		try {
 			System.out.println("Access element three :" + a[3]);
+
 		} catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("Exception thrown :" + e);
+
 		} finally {
 			a[0] = 6;
 			System.out.println("First element value: " + a[0]);
