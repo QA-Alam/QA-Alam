@@ -15,18 +15,14 @@ public class CheckBoxOperations {
 		System.setProperty("webdriver.chrome.driver", exePath);
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 
 		// To find web element using Xpath and performing click event on check box
 		WebElement option3 = driver.findElement(By.xpath("//input[@value='option3']"));
 		boolean isSelected = option3.isSelected();
-
 		if (!isSelected) {
 			option3.click();
-
 			System.out.println(option3.getText());
-
 			Thread.sleep(5000);
 		}
 	}

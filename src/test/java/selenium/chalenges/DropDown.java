@@ -1,12 +1,7 @@
 package selenium.chalenges;
 
-import java.util.List;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-
 import com.ny.basepage.SupperClass;
 import com.utility.CommonUtil;
 
@@ -35,14 +30,14 @@ public class DropDown extends SupperClass{
         			
         //Thread.sleep(5000);
         
-        //Select select = new Select(driver.findElement(By.id("oldSelectMenu")));
+       // Select select = new Select(driver.findElement(By.id("oldSelectMenu")));
 
         CommonUtil.handleDropDownMenu("Blue");
         
         
         //Step#4- Printing the options of the dropdown
         //Get list of web elements
-   /*     List<WebElement> lst = select.getOptions();
+   /*  List<WebElement> lst = select.getOptions();
 
         //Looping through the options and printing dropdown options
         System.out.println("The dropdown options are:");

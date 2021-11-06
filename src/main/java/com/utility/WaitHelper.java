@@ -28,3 +28,14 @@ public class WaitHelper extends SupperClass {
 
 	}
 }
+
+
+// Admin user -> Edit, delete, update added All the options 
+// Manager user -> edit, update added etc
+// Corporate user -> edit & update 
+// Clerk user -> Only can view the application 
+
+
+
+
+

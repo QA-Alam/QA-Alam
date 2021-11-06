@@ -21,7 +21,7 @@ public class DragAndDrop {
 		driver.get("http://demo.guru99.com/test/drag_drop.html");
 		
 		//Element which needs to drag.    		
-        	WebElement From =driver.findElement(By.xpath("//*[@id='credit2']/a"));	
+         WebElement From =driver.findElement(By.xpath("//*[@id='credit2']/a"));	
          
          //Element on which need to drop.		
          WebElement To =driver.findElement(By.xpath("//*[@id='bank']/li"));					
@@ -29,8 +29,8 @@ public class DragAndDrop {
          //Using Action class for drag and drop.		
          Actions act = new Actions(driver);					
 
-	//Dragged and dropped.		
-         act.dragAndDrop(From, To).build().perform();
+	     //Dragged and dropped.		
+	     act.dragAndDrop(From, To).build().perform();
          
          Thread.sleep(5000);
          

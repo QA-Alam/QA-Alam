@@ -21,7 +21,6 @@ public class SupperClass {
 	public static WebDriver driver;
 	public static Properties prop;
 
-
 	public WebDriver getDriver() {
 		return driver;
 	}
@@ -29,23 +28,28 @@ public class SupperClass {
 	public SupperClass() {
 		logger = Logger.getLogger("Test Lead Alam"); // Added logger
 		PropertyConfigurator.configure("Log4j.properties");// Added logger
-		try {
-			prop = new Properties();
-			FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/com/usa/config/Config.properties");
-			prop.load(ip);
-		} catch (FileNotFoundException e) {
-			
-			System.out.println(e.getMessage());
 	
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		}
+		
+				try {
+					prop = new Properties();
+					FileInputStream ip = new FileInputStream(
+							System.getProperty("user.dir") + "/src/main/java/com/usa/config/Config.properties");
+					prop.load(ip);
+				} catch (FileNotFoundException e) {
+					System.out.println(e.getMessage());
+				} catch (IOException e) {
+					System.out.println(e.getMessage());
+					
+				} finally {	// Must executed 
+					System.out.println("The finally statement is executed file not found");
+				}
+		
+	
 	}
 
-	
-	public static void initialization()  { // setUP();	
+	public static void initialization() { // setUP();
 		String browserName = prop.getProperty("browser");
-		
+
 		if (browserName.equals("chrome")) {
 			logger.info("******** I am a chrome browser*********");
 			System.setProperty("webdriver.chrome.driver", prop.getProperty("mac"));
@@ -56,8 +60,8 @@ public class SupperClass {
 			System.setProperty("webdriver.chrome.driver", prop.getProperty("windows"));
 			driver = new ChromeDriver();
 
-		} 
-		
+		}
+
 		else if (browserName.equals("headless")) {
 			logger.info("******** I am a headless mode chrome browser*********");
 			String chromeDriverPath = prop.getProperty("mac");
@@ -85,22 +89,19 @@ public class SupperClass {
 		else if (browserName.equals("safari")) {
 			driver = new SafariDriver();
 		}
-			
-		
-		
+
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	    driver.get(prop.getProperty("URL"));
-	   
+		driver.get(prop.getProperty("URL"));
 
 	}
-  
-	public static void initializations() { // setUP();	
+
+	public static void initializations() { // setUP();
 		String browserName = prop.getProperty("browser");
-		
+
 		if (browserName.equals("chrome")) {
 			logger.info("******** I am a chrome browser*********");
 			System.setProperty("webdriver.chrome.driver", prop.getProperty("mac"));
@@ -111,12 +112,12 @@ public class SupperClass {
 			System.setProperty("webdriver.chrome.driver", prop.getProperty("windows"));
 			driver = new ChromeDriver();
 
-		} 
+		}
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("URL"));
-}
+	}
 }

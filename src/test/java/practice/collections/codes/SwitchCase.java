@@ -4,7 +4,6 @@ public class SwitchCase {
 	public static void getDays(int days) {
 		int day = days;
 		String dayString;
-
 		// switch statement with int data type
 		switch (day) {
 		case 1:
@@ -40,7 +39,7 @@ public class SwitchCase {
 	
 	
 	public static void main(String[] args) {
-		SwitchCase.getDays(2);
+		SwitchCase.getDays(3);
 	}
 	
 	

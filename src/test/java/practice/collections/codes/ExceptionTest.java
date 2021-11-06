@@ -24,7 +24,7 @@ public class ExceptionTest {
 	// @Test
 	public static void NullPointerException() {
 		try {
-			String a = null; // null value
+			String a = ""; // null value
 			System.out.println(a.charAt(0));
 		} catch (NullPointerException e) {
 			System.out.println("NullPointerException..");

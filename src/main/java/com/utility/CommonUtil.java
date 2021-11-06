@@ -372,7 +372,7 @@ public class CommonUtil extends SupperClass {
 		
 	  	List<WebElement> list = driver.findElements(By.xpath("//*[@id='oldSelectMenu']/option"));
 			for (WebElement option : list) {
-				if (option.getText().contains("White")) {
+				if (option.getText().contains(dropDownValues)) {
 					option.click();
 					break;
 				}

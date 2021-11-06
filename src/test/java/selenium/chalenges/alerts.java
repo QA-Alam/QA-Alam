@@ -17,27 +17,25 @@ public class alerts {
 		// This step will result in an alert on screen
 		WebElement element = driver.findElement(By.id("confirmButton"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].click()", element);
-		
+
 		Thread.sleep(5000);
-		
-      // How to handle the alert or pop-up windows and alert notification 	
-				
+		// How to handle the alert or pop-up windows and alert notification
+		// Alert is interface abc is object not a variable
 		Alert abc = driver.switchTo().alert();
-		
-		//String alertText = confirmationAlert.getText();
-			
-		//System.out.println("Alert text is " + alertText);
-		
-		
+
+		// String alertText = confirmationAlert.getText();
+
+		// System.out.println("Alert text is " + alertText);
+
 		abc.accept();
-		
-		//confirmationAlert.sendKeys("uiuwegfuwegui");
-	
-		// What  Q
-		// Why -> Project 
-		// How  *****
-	
-		//confirmationAlert.sendKeys("uiuwegfuwegui");
-		//confirmationAlert.dismiss();
+
+		// confirmationAlert.sendKeys("smart-tech-It");
+
+		// What Q
+		// Why -> Project
+		// How *****
+
+		// confirmationAlert.sendKeys("smart-tech-It");
+		// confirmationAlert.dismiss();
 	}
 }

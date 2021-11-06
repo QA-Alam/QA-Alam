@@ -507,3 +507,23 @@
 2021-10-30 16:29:32,402 [TestNG-tests-1] INFO Test Lead Alam - ******** Test Execute on Chrome Browser  *********
 2021-10-30 16:29:32,402 [TestNG-tests-2] INFO Test Lead Alam - ******** Test Execute on Edge Browser  *********
 2021-10-30 16:29:32,402 [TestNG-tests-3] INFO Test Lead Alam - ******** Test Execute on Safari Browser  *********
+2021-11-02 22:58:16,277 [main] INFO Test Lead Alam - ******** I am a chrome browser*********
+2021-11-02 22:58:23,371 [main] INFO Test Lead Alam - 
+2021-11-02 22:58:23,372 [main] INFO Test Lead Alam - ...........START AUTOMATION.............
+2021-11-02 22:58:23,372 [main] INFO Test Lead Alam - 
+2021-11-02 22:58:26,421 [main] INFO Test Lead Alam - ******** User able to verify successfully login & verify the homepage title *********
+2021-11-02 22:58:28,522 [main] INFO Test Lead Alam - ******** Users can hover over the page on the For Sale module and click on the UK Property For Sale *********
+2021-11-02 22:58:32,752 [main] INFO Test Lead Alam - ******** Users is able to enter location *********
+2021-11-02 22:58:53,493 [main] INFO Test Lead Alam - 
+2021-11-02 22:58:53,494 [main] INFO Test Lead Alam - ...........END AUTOMATION.............
+2021-11-02 22:58:53,495 [main] INFO Test Lead Alam - 
+2021-11-03 18:52:46,013 [main] INFO Test Lead Alam - ******** I am a chrome browser*********
+2021-11-03 18:52:51,516 [main] INFO Test Lead Alam - 
+2021-11-03 18:52:51,517 [main] INFO Test Lead Alam - ...........START AUTOMATION.............
+2021-11-03 18:52:51,517 [main] INFO Test Lead Alam - 
+2021-11-03 18:52:53,686 [main] INFO Test Lead Alam - ******** User able to verify successfully login & verify the homepage title *********
+2021-11-03 18:52:56,353 [main] INFO Test Lead Alam - ******** Users can hover over the page on the For Sale module and click on the UK Property For Sale *********
+2021-11-03 18:52:57,362 [main] INFO Test Lead Alam - ******** Users is able to enter location *********
+2021-11-03 18:53:15,564 [main] INFO Test Lead Alam - 
+2021-11-03 18:53:15,564 [main] INFO Test Lead Alam - ...........END AUTOMATION.............
+2021-11-03 18:53:15,565 [main] INFO Test Lead Alam - 
