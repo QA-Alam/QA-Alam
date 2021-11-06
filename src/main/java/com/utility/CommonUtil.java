@@ -41,7 +41,7 @@ import java.awt.datatransfer.StringSelection;
 public class CommonUtil extends SupperClass {
 	private static final String ACTION = "arguments[0].click();";
 	static String projectPath = "user.dir";
-	//static WebDriver driver;
+	// static WebDriver driver;
 
 	public static void highLighterMethod(WebDriver driver, WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -369,12 +369,32 @@ public class CommonUtil extends SupperClass {
 
 	public static void handleDropDownMenu(String dropDownValues) {
 		WebDriver driver = null;
-		
-	  	List<WebElement> list = driver.findElements(By.xpath("//*[@id='oldSelectMenu']/option"));
-			for (WebElement option : list) {
-				if (option.getText().contains(dropDownValues)) {
-					option.click();
-					break;
-				}
+
+		List<WebElement> list = driver.findElements(By.xpath("//*[@id='oldSelectMenu']/option"));
+		for (WebElement option : list) {
+			if (option.getText().contains(dropDownValues)) {
+				option.click();
+				break;
 			}
-}}
+		}
+	}
+    // What is iframe?
+	// iframe is a document overwrapping the project. Before we click any operation on the
+	// webpage with any operation, we need to handle the iframe
+	
+	// How to handle iframe in selenium?
+	
+	// I can handle many way like -> 
+	// 1. using explicit wait and frametobeavailable and switch to it method 
+	//    and pass frame name
+	// 2. using driver.switchto.frame method and pass the tag name
+	public static void waitForFrameAndSwitch(String frameDetails) {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameDetails));
+	}
+
+	public static void handleframe() {
+		driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
+	}
+
+}
