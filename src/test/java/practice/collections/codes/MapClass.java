@@ -45,7 +45,7 @@ public class MapClass {
 		map.put(104, "Alam");
 		map.put(105, "Alam");
 
-		for (Entry<Integer, String> name : map.entrySet()) {
+	for (Entry<Integer, String> name : map.entrySet()) {
 			System.out.println("Key Num : " + name.getKey() + " Values : " + name.getValue());
 			// System.out.println(" Values : " + name.getValue());
 

@@ -87,7 +87,6 @@ SQL> alter user hr identified by hr
                                                                             String is an immutable.
                                                                    StringBuffer is a mutable and synchronized.
                                                              StringBuilder is also mutable but its not synchronized.
-
                   First lets see the similarities: Both StringBuilder and StringBuffer are mutable. That means you can change the content of them, with in the same location.
                            Differences: StringBuffer is mutable and synchronized as well. Where as StringBuilder is mutable but not synchronized by default.
 

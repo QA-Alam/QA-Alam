@@ -26,11 +26,11 @@ public class DropDown extends SupperClass{
         //  By selecting index 
         //  By selecting VisibleText = Blue
         
-        // 2. I can handle drop down help with list interface
+         // 2. I can handle drop down help with list interface
         			
-        //Thread.sleep(5000);
+         // Thread.sleep(5000);
         
-       // Select select = new Select(driver.findElement(By.id("oldSelectMenu")));
+         // Select select = new Select(driver.findElement(By.id("oldSelectMenu")));
 
         CommonUtil.handleDropDownMenu(driver, "Blue");
         
@@ -41,10 +41,10 @@ public class DropDown extends SupperClass{
 
         //Looping through the options and printing dropdown options
         System.out.println("The dropdown options are:");
-        for(WebElement options: lst)
-        	
+        for(WebElement options: lst)    	
             System.out.println(options.getText());*/
 
+        
         //Step#5- Selecting the option as 'Purple'-- selectByIndex
         // System.out.println("Select the Option by Index 1");
         // select.selectByIndex(1);
