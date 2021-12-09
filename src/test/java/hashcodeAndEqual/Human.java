@@ -1,7 +1,7 @@
 package hashcodeAndEqual;
 
 public class Human {
-	// what is difference between hashcode and equals in java
+	// what is difference between hash-code and equals in java
 	
 	
 	// When we create the class internally parent class is object

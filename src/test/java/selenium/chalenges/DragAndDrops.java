@@ -17,8 +17,7 @@ public class DragAndDrops {
 		System.setProperty("webdriver.chrome.driver", exePath);
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		
-		
+			
 		driver.get("http://demo.guru99.com/test/drag_drop.html");
 
 		// Element(BANK) which need to drag.

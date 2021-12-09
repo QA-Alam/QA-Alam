@@ -32,12 +32,12 @@ public class DropDown extends SupperClass{
         
        // Select select = new Select(driver.findElement(By.id("oldSelectMenu")));
 
-        CommonUtil.handleDropDownMenu("Blue");
+        CommonUtil.handleDropDownMenu(driver, "Blue");
         
         
         //Step#4- Printing the options of the dropdown
         //Get list of web elements
-   /*  List<WebElement> lst = select.getOptions();
+        /*  List<WebElement> lst = select.getOptions();
 
         //Looping through the options and printing dropdown options
         System.out.println("The dropdown options are:");
@@ -46,14 +46,14 @@ public class DropDown extends SupperClass{
             System.out.println(options.getText());*/
 
         //Step#5- Selecting the option as 'Purple'-- selectByIndex
-       // System.out.println("Select the Option by Index 1");
-       // select.selectByIndex(1);
+        // System.out.println("Select the Option by Index 1");
+        // select.selectByIndex(1);
         //System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
 
         //Step#6- Selecting the option as 'Magenta'-- selectByVisibleText
-       // System.out.println("Select the Option by Text Magenta");
-       //select.selectByVisibleText("Blue");
-      // System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
+        // System.out.println("Select the Option by Text Magenta");
+        //select.selectByVisibleText("Blue");
+        // System.out.println("Select value is: " + select.getFirstSelectedOption().getText());
 
         //Step#7- Selecting an option by its value
        // System.out.println("Select the Option by value 6");

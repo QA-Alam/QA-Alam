@@ -21,9 +21,7 @@ public class SupperClass {
 	public static WebDriver driver;
 	public static Properties prop;
 
-	public WebDriver getDriver() {
-		return driver;
-	}
+
 
 	public SupperClass() {
 		logger = Logger.getLogger("Test Lead Alam"); // Added logger

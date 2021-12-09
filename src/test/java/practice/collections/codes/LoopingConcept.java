@@ -11,6 +11,7 @@ public class LoopingConcept {
 			System.out.println(i);
 		}
 	}
+	
 	//@Test
 	public static void advanceLoop() {
       String []cars = {"BMW", "NISSAN", "TOYOTA", "TESLA"};
@@ -20,7 +21,6 @@ public class LoopingConcept {
 		System.out.println(myCar);
 		}
 	}
-	
 	
     //@Test
 	public static void whileLoop() {

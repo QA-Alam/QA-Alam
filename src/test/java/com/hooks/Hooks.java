@@ -9,11 +9,8 @@ import cucumber.api.java.Before;
 
 public class Hooks extends SupperClass {
 
-
-
 	public Scenario scenario;
 	ZooplaElementsPage pf;
-
 	@Before
 	public void suiteSetup(Scenario scenario) throws InterruptedException {
 		this.scenario = scenario; 
@@ -22,7 +19,6 @@ public class Hooks extends SupperClass {
 		logger.info("...........START AUTOMATION.............");
 		logger.info("");
 	}
-
 	@After
 	public void tearDown(Scenario scenario) {
 		if (scenario.isFailed()) {
@@ -33,6 +29,6 @@ public class Hooks extends SupperClass {
 		logger.info("");
 		logger.info("...........END AUTOMATION.............");
 		logger.info("");
+		
 	}
-
 }

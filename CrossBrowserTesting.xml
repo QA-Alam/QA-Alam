@@ -5,7 +5,7 @@
 		<parameter name="browser" value="Chrome" />
 		<classes>
 			<class name="selenium.chalenges.crossBrowserTesting">
-			</class>
+	    </class>
 		</classes>
 	</test>
 	<test name="EdgeTest">

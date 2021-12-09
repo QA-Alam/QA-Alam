@@ -10,6 +10,8 @@ import java.util.Set;
 import java.util.Vector;
 import java.util.stream.Collectors;
 
+import org.testng.annotations.Test;
+
 public class ListClass {
 
 	// What is the collection?
@@ -39,30 +41,24 @@ public class ListClass {
 	// ArrayList is non-synchronized, That means it's faster
 	// ArrayList flowing the index theory java
 	// ArrayList when add the new values increases the size 50%
-	
-	
+
 	// ArrayList faster then vector
 	// ArrayList slower then array
-	
-	
-	
+
 	// Array length is fixed
 	// Array is an object as well non-primitive data type
-	// Array is faster 
-	// Single diminution & multidiminution array
-	
-	
-	
-	// ArrayList is dynamic 
-	// ArrayList is a class and implements from list interface 
-	// array list is slower then array 
+	// Array is faster
+	// Single diminution & multi diminution array
+
+	// ArrayList is dynamic
+	// ArrayList is a class and implements from list interface
+	// array list is slower then array
 	// ArrayList allow null value as much require
 	// ArrayList allow duplicate value as much require
 	// ArrayList when we added new values memory will increase 50%
-	// ArrayList can handle 
-	
+	// ArrayList can handle
 
-	// Generic style
+	// Generic style 
 	public static void mains() {
 
 		// Old way
@@ -123,7 +119,6 @@ public class ListClass {
 		vactor.add(null);
 		vactor.add(null);
 		vactor.add(null);
-
 		vactor.remove(3);
 
 		for (int i = 0; i < vactor.size(); i++) {
@@ -133,10 +128,10 @@ public class ListClass {
 		// LinkedList flowing linked theory java
 		// We can handle data structures as well
 		// Searching is slower but adding the element is faster
-		
+
 		// This is for stack
 		// 0 1 2 3 4 5 > LIFO
-		
+
 		LinkedList<String> linkList = new LinkedList<>();
 		linkList.add(0, "Rahaman");
 		linkList.add(1, "Alam");
@@ -165,8 +160,8 @@ public class ListClass {
 
 	}
 
-	// How to find out duplicate values from array ? NY square, N square NYS square
-	// @Test
+// How to find out duplicate values from array ? NY square, N square NYS square
+	@Test
 	public static void getDuplicateElement() {
 		String[] value = { "Java", "Selenium", "Maven", "TestNG", "Cucumber", "Java" };
 		Set<String> store = new HashSet<>();
@@ -175,7 +170,6 @@ public class ListClass {
 				System.out.println("This is my duplicate value : " + duplicate);
 			}
 		}
-
 	}
 
 	// How to find out the max & minimum value
@@ -185,10 +179,10 @@ public class ListClass {
 		List<Integer> num = Arrays.asList(100, 200, 300, 500, 700, 800);
 		int max = Collections.max(num);
 		System.out.println("Maximum value : " + max);
-		
-		
+
 		int min = Collections.min(num);
 		System.out.println("Minimum value : " + min);
+
 	}
 
 	// @Test
@@ -224,16 +218,15 @@ public class ListClass {
 			System.out.println("after sort the data : " + data);
 		}
 	}
-	    public static void main(String args[])
-	    {
-	        String str = "geekss for geekss";
-	        String[] arrOfStr = str.split(" ", 3);
-	 
-	        for (String a : arrOfStr)
-	            System.out.println(a);
-	    }
+
+	public static void main(String args[]) {
+		String str = "geekss for geekss";
+		String[] arrOfStr = str.split(" ", 3);
+
+		for (String a : arrOfStr)
+			System.out.println(a);
 	}
-	
+}
 
 // It is a Collection, Algorithm  
 // What is the deference between arrayList & linkedList?
@@ -245,5 +238,3 @@ public class ListClass {
 // 4. Difference between Array and Array List.
 // 5. Difference between List and Set.
 // 6. Difference between Hash table and HashMap.
-
-

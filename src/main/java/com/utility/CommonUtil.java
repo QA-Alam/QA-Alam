@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Base64;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
@@ -47,7 +48,7 @@ public class CommonUtil extends SupperClass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
 	}
-
+	
 	public static String getScreenshot(WebDriver driver, Scenario scenario) {
 
 		String screenshotName = scenario.getName().replaceAll(" ", "_");
@@ -140,7 +141,7 @@ public class CommonUtil extends SupperClass {
 	// Created for generating random string for Unique email
 	public static String randomestring() {
 		String generatedString1 = RandomStringUtils.randomAlphabetic(5);
-		return (generatedString1);
+		return ("Alam" + generatedString1 + "@gmail.com");
 	}
 
 	// Created for generating random string for Unique email
@@ -258,6 +259,19 @@ public class CommonUtil extends SupperClass {
 		((JavascriptExecutor) driver).executeScript(ACTION, element);
 	}
 
+	// Created for generating random string for Unique email
+	public static String randomestringOne() {
+		String generatedString1 = RandomStringUtils.randomAlphabetic(8);
+		return (generatedString1);
+	}
+
+	// Created for generating random string for Unique email
+	public static String randomNumericTwo() {
+		String generatedString = RandomStringUtils.randomNumeric(20);
+		return (generatedString);
+	}
+	
+	
 	public static void mouseHover(WebElement elementtoclick, WebDriver driver) {
 		try {
 			Actions action = new Actions(driver);
@@ -367,12 +381,11 @@ public class CommonUtil extends SupperClass {
 		Thread.sleep(2000);
 	}
 
-	public static void handleDropDownMenu(String dropDownValues) {
-		WebDriver driver = null;
-
+	public static void handleDropDownMenu(WebDriver driver, String dropDownValues) {
 		List<WebElement> list = driver.findElements(By.xpath("//*[@id='oldSelectMenu']/option"));
 		for (WebElement option : list) {
 			if (option.getText().contains(dropDownValues)) {
+				System.out.println("Selected value is a : "+ option.getText());
 				option.click();
 				break;
 			}
@@ -396,5 +409,25 @@ public class CommonUtil extends SupperClass {
 	public static void handleframe() {
 		driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
 	}
+	
+	// How you create the functions 
+	public static String getEncodedText(String text) {
+		byte[] encoded = Base64.getEncoder().encode(text.getBytes());
+		String encodedString = new String(encoded);		
+		return encodedString;	
+	}	
+	public static String getDecodedText(String text) {
+		byte[] bytes = Base64.getDecoder().decode(text.getBytes());
+		String decodedString = new String(bytes);	
+		return decodedString;
+		
+	}
+	
+	public void multipleClick() throws InterruptedException {	
+		WebElement buttonElement = driver.findElement(By.xpath(""));
+		for(int i=0;i<=20;i++) {
+		buttonElement.click();
+		break;
+		}
 
-}
+}}

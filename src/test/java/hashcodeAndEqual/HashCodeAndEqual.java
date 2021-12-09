@@ -1,7 +1,7 @@
 package hashcodeAndEqual;
 
 public class HashCodeAndEqual {
-// Hash code generate the unique number
+    // Hash code generate the unique number
 	public static void main(String[] args) {
 		Human alamHashCode = new Human(101, "Mohammed Alam");
 		// Hash-code() belong to object class
