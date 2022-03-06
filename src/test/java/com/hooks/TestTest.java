@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class TestTest {
 
+	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String[] args) throws InterruptedException {
 		String exePath = "/Applications/chromedriver";
 
@@ -102,10 +103,11 @@ public class TestTest {
 		/*
 		 * String str = "User Name"; WebElement ele =
 		 * driver.findElement(By.xpath("searchBoxXpath")); ele.sendKeys(str);
-		 * 
+	
 		 * // identify elements List<WebElement> elements =
 		 * driver.findElements(By.xpath("textBoxXpath"));
-		 * 
+	
+
 		 * // verify size if (elements.size() > 0) { System.out.println("Text: " + str +
 		 * " is present. "); } else { System.out.println("Text: " + str +
 		 * " is not present. "); } driver.quit(); }

@@ -8,10 +8,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.testng.annotations.Test;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 public class StringIntervewoCodes {
 
-	// @Test
+	 //@Test
 	public void countDuplicateString() {
 		String str = "smarttechitsulition";
 		Map<Character, Integer> charMap = new HashMap<Character, Integer>();
@@ -29,6 +30,8 @@ public class StringIntervewoCodes {
 	}
 
 	public static void main(String[] args) {
+		//countDuplicateCharacters("infosys");
+		
 		String aa = "smarttechitsulition";
 		String[] stringarray = aa.split("");
 		Map<String, Long> map = Arrays.stream(stringarray)
@@ -56,12 +59,14 @@ public class StringIntervewoCodes {
 
 	}
 
-	// @Test
+ //@Test
 	public static void revarseString() {
 		String text = "Mohammed Alam";
 		for (int i = (text.length() - 1); i >= 0; i--) {
 			char reverse = text.charAt(i);
 			System.out.print(reverse);
+			
+			
 		}
 	}
 
@@ -108,7 +113,7 @@ public class StringIntervewoCodes {
 		System.out.println("String length without counting whitespaces: " + stringLengthWithoutSpaces);
 	}
 
-	@Test
+	//@Test
 	// How to count char from strings
 	public static void getCharCountWOrd() {
 		String exampleString = "This is just a sample string";
@@ -168,4 +173,70 @@ public class StringIntervewoCodes {
 		System.out.println("Object to object equal is true " + s5.equals(s6)); // true
 		System.out.println("Object to object == is false " + (s5 == s6)); // false
 	}
-}
+	     //@Test
+		/// Function to print all duplicate  characters in string using HashMap
+	    public static void countDuplicateCharacters()  {  
+	    	String str = "Infosys";
+	        // Creating a HashMap containing char
+	        // as a key and occurrences as a value
+	        Map<Character, Integer> map = new HashMap<Character, Integer>();
+	  
+	        // Converting given string into  a char array
+	        char[] charArray = str.toCharArray();
+	  
+	        // Checking each character of charArray
+	        for (char value : charArray) {
+	  
+	            if (map.containsKey(value)) {
+	  
+	                // If character is present  in map incrementing it's count by 1
+	                map.put(value, map.get(value) + 1);
+	            }
+	            else {
+	  
+	                // If character is not present in map putting this character into map with 1 as it's value.
+	                map.put(value, 1);
+	            }
+	        }
+	  
+	        // Traverse the HashMap, check  if the count of the character
+	        // is greater than 1 then print  the character and its frequency
+	        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+	  
+	            if (entry.getValue() > 1) {
+	                
+	            	System.out.println(entry.getKey() + " : " + entry.getValue());
+	            }
+	        }
+	    }
+	  @Test
+	     public static void getDuplicates() {
+	    	 String str = "Infosys";
+	    	    String t = "";
+	    	    for (int i = 0; i < str.length() - 1; i++) {
+
+	    	      	
+	    	        for (int j = i + 1; j < str.length(); j++) {
+	    	        	
+	    	            if (str.charAt(i) == str.charAt(j) && !t.contains(str.charAt(j) + "")) {
+	    	                t = t + str.charAt(i);
+	    	            }
+	    	        }
+	    	    }
+	    	    
+	    	    
+	    	    System.out.println("Duplicates : "+ t);
+	    	}
+
+	  
+	  
+	//@Test
+    public static void main() {
+		String str = "Nebraska  Nevada  New Hampshire  New Jersey  New Mexico"; 
+		String str2 = "Arizona  Arkansas Nebraska  Nevada  New Hampshire  New Jersey  New Mexico";
+		if (str.compareTo(str2) == 0)
+		{
+
+    }
+
+}}

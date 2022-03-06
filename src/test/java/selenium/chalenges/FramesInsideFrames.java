@@ -12,10 +12,54 @@ import org.testng.Assert;
 
 public class FramesInsideFrames {
 	
+	/*      What is an iframe?? Do you know i-frame?
+			Ans:iframe in selenium Web-driver in a web-page in-line frame. 
+			On the top of the HTML document it wraps another document, That is i-frame. 
+
+			How to handle an i-frame?
+			Ans:there are many ways to handle it but in my current project i am using by 
+			driver.switchTo().defaultContains method. 
+
+			for example: we have to identify the frame by eitherntagName/id/webElements,
+			then we have to store the frame into the int variable.(or list variable) syntax below
+			int size = driver.findElements(By.locator("frame")).size();
+
+			//By switching the iframe with the help of driver.switchTo() method and switchTo().frame() method
+			we can take control of all the frames. syntax below:
+			driver.switchTo().frame(size); 
+
+			again by driver.findElements i have to identify the webElement to do the operation
+			and store it into the int variable.
+			int value = driver.findElements(By.locator("")).size();
+
+			Lastly again i have to use driver.switchTo and defaultContaint method 
+			which will take control all the iframes in the webpage so i can do any operation in the webPage syntax below
+			driver.switchTo().defaultContent();
+
+			How to handle iframe
+			int size = driver.findElements(By.locator("frame")).size();
+			driver.switchTo().frame(size); 
+			driver.switchTo().defaultContent();
+
+
+
+			How to handle one frame inside another frame??
+			Ans: First i must switch to the outer frame, by either index or id of the iframe
+			once i switch to the outer frame i can find the total number of iframe inside the outer frame
+			then i can switch to the inner frame by defaultContent method or any known methods
+
+			How to handle an iframe inside another frame?
+			int size = driver.findElements(By.locator("frame")).size();
+			driver.switchTo().frame(size); 
+			int value = driver.findElements(By.locator("")).size();
+			driver.switchTo().defaultContent();
+			
+*/
 
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
 		WebDriver driver = new ChromeDriver();
+		
 		// 1) Navigate to URL
 		driver.navigate().to("http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_target");
 		driver.manage().window().maximize();

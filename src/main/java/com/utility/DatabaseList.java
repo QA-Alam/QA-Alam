@@ -23,32 +23,25 @@ public class DatabaseList {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
-
 			e.printStackTrace();
 		}
-
 		ArrayList<String> columnValue = new ArrayList<String>();
-
 		try {
 			while (rs.next()) {
 				columnValue.add(rs.getString(columnName));
-
-			}
+				}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		System.out.println(columnValue);
-		// step5 close the connection object
+	// step5 close the connection object
 		try {
 			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return columnValue;
-
-	}
+	}	
 	
 	public static void main(String[] args) {
 		String Queries ="SELECT department_name, max (salary)\r\n" +
@@ -59,16 +52,11 @@ public class DatabaseList {
 		" HAVING max (salary)>5000\r\n" +
 		" Order by max (salary) desc";
 		getDataTableColumn(Queries, "Department_name");
-		getDataTableColumn(Queries, "max(salary)");
-		
-		
-	
-	}
+		//getDataTableColumn(Queries, "max(salary)");				
+	}	
 	public static int amazon(String test_id, String DESCRIPTION,
 			String EXPECTED, String ACTUAL, String STATUS)
-			throws SQLException {
-		
-
+			throws SQLException {		
 		Connection conn = null;
 		int recordInserted=0;
 		try {

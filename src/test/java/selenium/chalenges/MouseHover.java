@@ -3,6 +3,7 @@ package selenium.chalenges;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -92,6 +93,13 @@ public class MouseHover {
 
 		// Close Chrome driver.
 		// driver.close();
+	}
+	
+	public void mouseHoverJavaScript(WebElement ele) {
+		String javaScript = "var evObj = document.createEvent('MouseEvents');" +
+                "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);" +
+                "arguments[0].dispatchEvent(evObj);";
+                ((JavascriptExecutor)driver).executeScript(javaScript, ele);
 	}
 
 }

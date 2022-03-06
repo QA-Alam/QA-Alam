@@ -44,6 +44,7 @@ public class GetMethod {
 		String contentType = response.header("Content-Type");// capture details of Content-Type header
 		System.out.println("Content Type is:" + contentType);
 		Assert.assertEquals(contentType, "application/json; charset=utf-8");
+
 //
 //		// success code validation
 //		String title = response.jsonPath().get("[1].title");

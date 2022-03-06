@@ -20,15 +20,15 @@ SQL> alter user hr identified by hr
        Property                              java.util.List                              java.util.Set                                   java.util.Map
                                        List allows to store duplicate              Set does not allow to store                  Map stores data in form of key-value pair 
 1,    Duplicate elements                   elements in java.                     duplicate elements in java.                    it does not allow to store duplicate keys             
-                                                                                                                                but allows duplicate values in java.
+                                                                                                   but allows duplicate values in java.
 
                                     java.util.List is ordered collection      Most of the java.util.Set implementation        Most of the java.util.Map implementation 
                                     it maintain insertion order in java.      does not maintain insertion order.              does not maintain insertion order.
-                                    order in java.                            HashSet does not maintains insertion            HashMap does not maintains insertion order.
-2,    Insertion order                                                         Thought LinkedHashMap maintains insertion       order of keys in java.
-                                                                              Thought LinkedHashSet maintains insertion       TreeMap is sorted by natural order of keys in java.
-                                                                              order in java.                                  
-                                                                              TreeSet is sorted by natural order in java.
+                                    order in java.                                    HashSet does not maintains insertion            HashMap does not maintains insertion order.
+2,    Insertion order                                                              Thought LinkedHashMap maintains insertion       order of keys in java.
+                                                                                           Thought LinkedHashSet maintains insertion       TreeMap is sorted by natural order of keys in java.
+                                                                                                 order in java.                                  
+                                                                                           TreeSet is sorted by natural order in java.
                                   
                                     List allows to store many null keys       Most of the Set implementations allow to        Lets look at Map implementations -
                                     in java.                                  add only one null in java.                      HashMap allows one null key and many null values.

@@ -15,34 +15,35 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class SupperClass {
 
+	
+	
 	public static Logger logger;
 	public static WebDriver driver;
 	public static Properties prop;
 
-
-
+	
 	public SupperClass() {
 		logger = Logger.getLogger("Test Lead Alam"); // Added logger
-		PropertyConfigurator.configure("Log4j.properties");// Added logger
-	
-		
-				try {
-					prop = new Properties();
-					FileInputStream ip = new FileInputStream(
-							System.getProperty("user.dir") + "/src/main/java/com/usa/config/Config.properties");
-					prop.load(ip);
-				} catch (FileNotFoundException e) {
-					System.out.println(e.getMessage());
-				} catch (IOException e) {
-					System.out.println(e.getMessage());
-					
-				} finally {	// Must executed 
-					System.out.println("The finally statement is executed file not found");
-				}
-		
-	
+		PropertyConfigurator.configure("Log4j.properties"); // Added logger
+
+		try {
+			prop = new Properties();
+			FileInputStream ip = new FileInputStream(
+					System.getProperty("user.dir") + "/src/main/java/com/usa/config/Config.properties");
+			prop.load(ip);
+		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+
+		} finally { // Must executed
+			System.out.println("The finally statement is executed file not found");
+		}
+
 	}
 
 	public static void initialization() { // setUP();
@@ -51,15 +52,17 @@ public class SupperClass {
 		if (browserName.equals("chrome")) {
 			logger.info("******** I am a chrome browser*********");
 			System.setProperty("webdriver.chrome.driver", prop.getProperty("mac"));
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 
 		} else if (browserName.equals("chrome")) {
 			logger.info("******** I am a chrome browser*********");
 			System.setProperty("webdriver.chrome.driver", prop.getProperty("windows"));
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-
 		}
 
+		
 		else if (browserName.equals("headless")) {
 			logger.info("******** I am a headless mode chrome browser*********");
 			String chromeDriverPath = prop.getProperty("mac");
@@ -103,6 +106,7 @@ public class SupperClass {
 		if (browserName.equals("chrome")) {
 			logger.info("******** I am a chrome browser*********");
 			System.setProperty("webdriver.chrome.driver", prop.getProperty("mac"));
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 
 		} else if (browserName.equals("chrome")) {
@@ -119,3 +123,5 @@ public class SupperClass {
 		driver.get(prop.getProperty("URL"));
 	}
 }
+
+

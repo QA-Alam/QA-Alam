@@ -6,13 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 // Java Program retrieving contents of
+
 // Table Using JDBC connection
 
 // Java code producing output which is based
+
 // On values stored inside the "cuslogin" table in DB
 
 // Importing SQL libraries to create database
-
 
 public class GFG {
 
@@ -25,7 +26,6 @@ public class GFG {
      ResultSet rs = null;
 
      con = connection.connectDB();
-
 // Try block to catch exception/s
      try {
 // SQL command data stored in String data type
@@ -36,7 +36,6 @@ public class GFG {
 // Printing ID, name, email of customers
 // of the SQL command above
          System.out.println("EMPLOYEE-ID\t\tFIRST-NAME\t\tEMAIL-ADDRESS");
-
      // Condition check
          while (rs.next()) {
 
@@ -46,7 +45,6 @@ public class GFG {
              System.out.println(EMPLOYEE_ID + "\t\t" + FIRST_NAME + "\t\t" + LAST_NAME);
          }
      }
-
 // Catch block to handle exception
      catch (SQLException e) {
 

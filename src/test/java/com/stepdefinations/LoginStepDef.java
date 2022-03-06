@@ -20,6 +20,8 @@ public class LoginStepDef extends SupperClass {
 		initialization();
 		pf = PageFactory.initElements(driver, ZooplaElementsPage.class);
 		// pf = new ZooplaElementsPage(driver);
+		
+		
 	}
 
 	@Given("^User able to enter \"([^\"]*)\" url$")
@@ -34,7 +36,13 @@ public class LoginStepDef extends SupperClass {
 		try {
 			WaitHelper.waitForElement(pf.getClickSingButton(), 10);
 			CommonUtil.highLighterMethod(driver, pf.getClickSingButton());
-			pf.getClickSingButton().click();
+			///pf.getClickSingButton().click();
+			
+			
+			CommonUtil.waitThenClick(pf.getClickSingButton(), driver);
+			
+			
+			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

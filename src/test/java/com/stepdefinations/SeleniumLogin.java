@@ -1,6 +1,5 @@
 package com.stepdefinations;
 
-
 import java.io.FileReader;
 import java.util.Arrays;
 import java.util.List;
@@ -12,11 +11,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
 public class SeleniumLogin {
 	public static WebDriver driver;
 	static FileReader textfile;
-
+	
 	@SuppressWarnings("unused")
 	public static void main(String[] args) throws Throwable {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -91,7 +89,7 @@ public static void print(String[]ar) {
 		
 
 		// How to select dynamic element and print all the value
-/*		List<WebElement> price = driver.findElements(By.xpath("//*[@class='a-price']"));
+   /*	List<WebElement> price = driver.findElements(By.xpath("//*[@class='a-price']"));
 		System.out.println("Total Iphone count : " + price.size());
 		for (WebElement select : price) {
 			String priceList = select.getText();

@@ -31,11 +31,9 @@ public class TestListener implements ITestListener {
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// time stamp
 		String repName = "report-" + timeStamp + ".html";
 
-		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/ExtendReports/" + repName);// specify
-																											// location
+		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/ExtendReports/" + repName);// specify																											// location
 		// of the report
 		htmlReporter.loadXMLConfig(System.getProperty("user.dir") + "/extent-config.xml");
-
 		extent = new ExtentReports();
 
 		extent.attachReporter(htmlReporter);

@@ -40,7 +40,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 
 public class CommonUtil extends SupperClass {
-	private static final String ACTION = "arguments[0].click();";
+	private static final String click = "arguments[0].click();";
 	static String projectPath = "user.dir";
 	// static WebDriver driver;
 
@@ -48,7 +48,7 @@ public class CommonUtil extends SupperClass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
 	}
-	
+
 	public static String getScreenshot(WebDriver driver, Scenario scenario) {
 
 		String screenshotName = scenario.getName().replaceAll(" ", "_");
@@ -194,7 +194,7 @@ public class CommonUtil extends SupperClass {
 
 	public static void jsClick(WebElement ele) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript(ACTION, ele);
+		js.executeScript(click, ele);
 	}
 
 	public static void click(WebDriver driver, By by) {
@@ -256,7 +256,7 @@ public class CommonUtil extends SupperClass {
 	public static void clickWithJS(WebElement element) {
 		getWebDriverWait().until(ExpectedConditions.elementToBeClickable(element));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		((JavascriptExecutor) driver).executeScript(ACTION, element);
+		((JavascriptExecutor) driver).executeScript(click, element);
 	}
 
 	// Created for generating random string for Unique email
@@ -270,8 +270,7 @@ public class CommonUtil extends SupperClass {
 		String generatedString = RandomStringUtils.randomNumeric(20);
 		return (generatedString);
 	}
-	
-	
+
 	public static void mouseHover(WebElement elementtoclick, WebDriver driver) {
 		try {
 			Actions action = new Actions(driver);
@@ -285,7 +284,7 @@ public class CommonUtil extends SupperClass {
 			jse.executeScript(mouseOverScript, elementtoclick);
 			getWebDriverWait().until(ExpectedConditions.elementToBeClickable(elementtoclick));
 			highLightElement(elementtoclick);
-			jse.executeScript(ACTION, elementtoclick);
+			jse.executeScript(click, elementtoclick);
 		} catch (Exception e) {
 			logger.log(Level.WARN, "Interrup ted!", e);
 			Thread.currentThread().interrupt();
@@ -385,21 +384,23 @@ public class CommonUtil extends SupperClass {
 		List<WebElement> list = driver.findElements(By.xpath("//*[@id='oldSelectMenu']/option"));
 		for (WebElement option : list) {
 			if (option.getText().contains(dropDownValues)) {
-				System.out.println("Selected value is a : "+ option.getText());
+				System.out.println("Selected value is a : " + option.getText());
 				option.click();
 				break;
 			}
 		}
 	}
-    // What is iframe?
-	// iframe is a document overwrapping the project. Before we click any operation on the
+
+	// What is iframe?
+	// iframe is a document overwrapping the project. Before we click any operation
+	// on the
 	// webpage with any operation, we need to handle the iframe
-	
+
 	// How to handle iframe in selenium?
-	
-	// I can handle many way like -> 
-	// 1. using explicit wait and frametobeavailable and switch to it method 
-	//    and pass frame name
+
+	// I can handle many way like ->
+	// 1. using explicit wait and frametobeavailable and switch to it method
+	// = and pass frame name
 	// 2. using driver.switchto.frame method and pass the tag name
 	public static void waitForFrameAndSwitch(String frameDetails) {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -409,25 +410,35 @@ public class CommonUtil extends SupperClass {
 	public static void handleframe() {
 		driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
 	}
-	
-	// How you create the functions 
+
+	// How you create the functions
 	public static String getEncodedText(String text) {
 		byte[] encoded = Base64.getEncoder().encode(text.getBytes());
-		String encodedString = new String(encoded);		
-		return encodedString;	
-	}	
+		String encodedString = new String(encoded);
+		return encodedString;
+	}
+
 	public static String getDecodedText(String text) {
 		byte[] bytes = Base64.getDecoder().decode(text.getBytes());
-		String decodedString = new String(bytes);	
+		String decodedString = new String(bytes);
 		return decodedString;
-		
-	}
-	
-	public void multipleClick() throws InterruptedException {	
-		WebElement buttonElement = driver.findElement(By.xpath(""));
-		for(int i=0;i<=20;i++) {
-		buttonElement.click();
-		break;
-		}
 
-}}
+	}
+
+	@SuppressWarnings("unused")
+	public void multipleClick() throws InterruptedException {
+		WebElement buttonElement = driver.findElement(By.xpath(""));
+		for (int i = 0; i <= 20; i++) {
+			buttonElement.click();
+			break;
+		}
+	}
+
+	public void mouseHoverJavaScript(WebElement ele) {
+		String javaScript = "var evObj = document.createEvent('MouseEvents');"
+				+ "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);"
+				+ "arguments[0].dispatchEvent(evObj);";
+		((JavascriptExecutor) driver).executeScript(javaScript, ele);
+	}
+
+}

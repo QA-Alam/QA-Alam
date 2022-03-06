@@ -14,15 +14,13 @@ import io.restassured.specification.RequestSpecification;
 public class TestAPI {                                                                            
                                                                                                    
 static	String domin = "https://jsonplaceholder.typicode.com";                                     
-  //Could you please write the code get & post method by using BDD format like given when then api 
-                                                                                                   
+  //Could you please write the code get & post method by using BDD format like given when then api                                                                                                 
 	public static void main(String[] args) {                                                       
 		given().param("Content-Type", "application/json; charset=utf-8")                           
 		.when()                                                                                    
 		.get(domin+ "/post").then().statusCode(200).statusLine("HTTP/1.1 200 OK")                  
 		.body("[1].title", equalTo("qui est esse")).header("Content-Encoding", "gzip")             
-		.log().all();                                                                              
-						                                                                           
+		.log().all();                                                                              				                                                                           
 	}                                                                                              
                                                                                                    
 	 @Test                                                                                         
