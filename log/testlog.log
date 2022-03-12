@@ -605,3 +605,66 @@
 2022-01-04 16:12:13,595 - Test Lead Alam -INFO - 
 2022-01-04 16:12:13,596 - Test Lead Alam -INFO - ...........END AUTOMATION.............
 2022-01-04 16:12:13,596 - Test Lead Alam -INFO - 
+2022-03-12 11:25:25,150 - Test Lead Alam -INFO - ******** I am a chrome browser*********
+2022-03-12 11:25:27,399 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Using chromedriver 99.0.4844.51 (resolved driver for Chrome 99)
+2022-03-12 11:25:27,513 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
+2022-03-12 11:25:28,052 - io.github.bonigarcia.wdm.online.Downloader -INFO - Downloading https://chromedriver.storage.googleapis.com/99.0.4844.51/chromedriver_mac64.zip
+2022-03-12 11:25:28,756 - io.github.bonigarcia.wdm.online.Downloader -INFO - Extracting driver from compressed file chromedriver_mac64.zip
+2022-03-12 11:25:29,232 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Exporting webdriver.chrome.driver as /Users/mohammedalam/.cache/selenium/chromedriver/mac64/99.0.4844.51/chromedriver
+2022-03-12 11:25:36,025 - Test Lead Alam -INFO - 
+2022-03-12 11:25:36,027 - Test Lead Alam -INFO - ...........START AUTOMATION.............
+2022-03-12 11:25:36,028 - Test Lead Alam -INFO - 
+2022-03-12 11:25:40,818 - Test Lead Alam -INFO - 
+2022-03-12 11:25:40,818 - Test Lead Alam -INFO - ...........END AUTOMATION.............
+2022-03-12 11:25:40,819 - Test Lead Alam -INFO - 
+2022-03-12 11:28:43,086 - Test Lead Alam -INFO - ******** I am a chrome browser*********
+2022-03-12 11:28:43,914 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Using chromedriver 99.0.4844.51 (resolved driver for Chrome 99)
+2022-03-12 11:28:43,946 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Exporting webdriver.chrome.driver as /Users/mohammedalam/.cache/selenium/chromedriver/mac64/99.0.4844.51/chromedriver
+2022-03-12 11:28:49,288 - Test Lead Alam -INFO - 
+2022-03-12 11:28:49,289 - Test Lead Alam -INFO - ...........START AUTOMATION.............
+2022-03-12 11:28:49,290 - Test Lead Alam -INFO - 
+2022-03-12 11:28:52,777 - Test Lead Alam -INFO - 
+2022-03-12 11:28:52,778 - Test Lead Alam -INFO - ...........END AUTOMATION.............
+2022-03-12 11:28:52,778 - Test Lead Alam -INFO - 
+2022-03-12 11:31:53,979 - Test Lead Alam -INFO - ******** I am a chrome browser*********
+2022-03-12 11:31:54,503 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Using chromedriver 99.0.4844.51 (resolved driver for Chrome 99)
+2022-03-12 11:31:54,534 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Exporting webdriver.chrome.driver as /Users/mohammedalam/.cache/selenium/chromedriver/mac64/99.0.4844.51/chromedriver
+2022-03-12 11:31:59,292 - Test Lead Alam -INFO - 
+2022-03-12 11:31:59,293 - Test Lead Alam -INFO - ...........START AUTOMATION.............
+2022-03-12 11:31:59,293 - Test Lead Alam -INFO - 
+2022-03-12 11:32:02,682 - Test Lead Alam -INFO - 
+2022-03-12 11:32:02,682 - Test Lead Alam -INFO - ...........END AUTOMATION.............
+2022-03-12 11:32:02,682 - Test Lead Alam -INFO - 
+2022-03-12 11:34:00,286 - Test Lead Alam -INFO - ******** I am a chrome browser*********
+2022-03-12 11:34:00,637 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Using chromedriver 99.0.4844.51 (resolved driver for Chrome 99)
+2022-03-12 11:34:00,653 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Exporting webdriver.chrome.driver as /Users/mohammedalam/.cache/selenium/chromedriver/mac64/99.0.4844.51/chromedriver
+2022-03-12 11:34:04,662 - Test Lead Alam -INFO - 
+2022-03-12 11:34:04,662 - Test Lead Alam -INFO - ...........START AUTOMATION.............
+2022-03-12 11:34:04,663 - Test Lead Alam -INFO - 
+2022-03-12 11:34:05,431 - Test Lead Alam -INFO - ******** User able to verify successfully login & verify the homepage title *********
+2022-03-12 11:34:07,557 - Test Lead Alam -INFO - ******** Users can hover over the page on the For Sale module and click on the UK Property For Sale *********
+2022-03-12 11:34:08,824 - Test Lead Alam -INFO - ******** Users is able to enter location *********
+2022-03-12 11:34:46,961 - Test Lead Alam -INFO - ******** I am a chrome browser*********
+2022-03-12 11:34:47,308 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Using chromedriver 99.0.4844.51 (resolved driver for Chrome 99)
+2022-03-12 11:34:47,324 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Exporting webdriver.chrome.driver as /Users/mohammedalam/.cache/selenium/chromedriver/mac64/99.0.4844.51/chromedriver
+2022-03-12 11:34:51,779 - Test Lead Alam -INFO - 
+2022-03-12 11:34:51,779 - Test Lead Alam -INFO - ...........START AUTOMATION.............
+2022-03-12 11:34:51,780 - Test Lead Alam -INFO - 
+2022-03-12 11:34:52,323 - Test Lead Alam -INFO - ******** User able to verify successfully login & verify the homepage title *********
+2022-03-12 11:34:54,426 - Test Lead Alam -INFO - ******** Users can hover over the page on the For Sale module and click on the UK Property For Sale *********
+2022-03-12 11:34:55,779 - Test Lead Alam -INFO - ******** Users is able to enter location *********
+2022-03-12 11:35:30,295 - Test Lead Alam -INFO - 
+2022-03-12 11:35:30,297 - Test Lead Alam -INFO - ...........END AUTOMATION.............
+2022-03-12 11:35:30,297 - Test Lead Alam -INFO - 
+2022-03-12 11:38:02,242 - Test Lead Alam -INFO - ******** I am a chrome browser*********
+2022-03-12 11:38:02,891 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Using chromedriver 99.0.4844.51 (resolved driver for Chrome 99)
+2022-03-12 11:38:02,923 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Exporting webdriver.chrome.driver as /Users/mohammedalam/.cache/selenium/chromedriver/mac64/99.0.4844.51/chromedriver
+2022-03-12 11:38:07,810 - Test Lead Alam -INFO - 
+2022-03-12 11:38:07,811 - Test Lead Alam -INFO - ...........START AUTOMATION.............
+2022-03-12 11:38:07,811 - Test Lead Alam -INFO - 
+2022-03-12 11:38:08,460 - Test Lead Alam -INFO - ******** User able to verify successfully login & verify the homepage title *********
+2022-03-12 11:38:10,580 - Test Lead Alam -INFO - ******** Users can hover over the page on the For Sale module and click on the UK Property For Sale *********
+2022-03-12 11:38:11,998 - Test Lead Alam -INFO - ******** Users is able to enter location *********
+2022-03-12 11:38:22,212 - Test Lead Alam -INFO - 
+2022-03-12 11:38:22,213 - Test Lead Alam -INFO - ...........END AUTOMATION.............
+2022-03-12 11:38:22,214 - Test Lead Alam -INFO - 

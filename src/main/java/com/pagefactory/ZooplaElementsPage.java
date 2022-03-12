@@ -54,7 +54,8 @@ public class ZooplaElementsPage extends SupperClass {
 	}
 
 	public void getLogin() {
-		getClickSingButton().click();
+		//WaitHelper.waitForElement(getClickSingButton(), 20);
+		//getClickSingButton().click();
 		enterUserName.sendKeys(prop.getProperty("userName"));
 		enterPassword.sendKeys(prop.getProperty("textPassword"));
 		clickLogginButton.click();
@@ -94,7 +95,7 @@ public class ZooplaElementsPage extends SupperClass {
 		return clickingProperty;
 	}
 	//*[@class='css-1or8lzn-BodyContainer ep4jli7']
-	@FindBy(xpath = "//*[@class='css-1or8lzn-BodyContainer ep4jli7']")
+	@FindBy(xpath = "//*[@class='css-1or8lzn-BodyContainer eiwe0nt10']")
 	@CacheLookup
 	private WebElement propertyDetails;
 
