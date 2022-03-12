@@ -1,6 +1,7 @@
 package com.stepdefinations;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
@@ -40,36 +41,50 @@ public class FunctionalStepDef extends SupperClass {
 	@When("^Users is able to enter location- \"([^\"]*)\"- in the text box & hit enter button$")
 	public void users_is_able_to_enter_location_in_the_text_box_hit_enter_button(String location) {
 		logger.info("******** Users is able to enter location *********");
-		WaitHelper.waitForElement(pf.getEnterLocation(), 20);
+		CommonUtil.highLighterMethod(driver, pf.getEnterLocation());
+		WaitHelper.waitForElement(pf.getEnterLocation(), 20);	
 		pf.getEnterLocation().sendKeys(prop.getProperty("location"));
 		pf.getEnterLocation().sendKeys(Keys.ENTER);
 
 	}
 	@When("^Users is able to print all value/price of the properties in the console$")
 	public void users_is_able_to_print_all_value_price_of_the_properties_in_the_console() {
+		WaitHelper.waitVisibilityOfAllElements(pf.getPropertiesPrice());
 		pf.getPropertiesPrice();
 	}
 
 	@When("^click on the third property from the properties list$")
-	public void click_on_the_third_property_from_the_properties_list() throws InterruptedException {
+	public void click_on_the_third_property_from_the_properties_list()  {
 		pf.selectProperties(3);
 	}
 
 	@When("^Users is able to print out the selected property details$")
 	public void users_is_able_to_print_out_the_selected_property_details() {
+		WaitHelper.waitForElement(pf.verifyThePropertyDetails(),20);
 		String value = pf.verifyThePropertyDetails().getText();
 	    System.out.println("Property Deteleis : "+value);
 	}
 	@Then("^Users can Verify the price of the selected property$")
 	public void users_can_Verify_the_price_of_the_selected_property() {
+		WaitHelper.waitForElement(pf.verifyThePropertyPrice(),20);
 		Assert.assertEquals(ZooplaElementsPage.value, pf.verifyThePropertyPrice().getText());
-		System.out.println("My expected result is a : "+pf.verifyThePropertyPrice().getText());
-		
-
+		System.out.println("My expected result is a : " + pf.verifyThePropertyPrice().getText());
 	}
-
 	@Then("^User is able to logout the application$")
 	public void user_is_able_to_logout_the_application() {
-
+		CommonUtil.highLighterMethod(driver, pf.mouseHovers());
+		WaitHelper.waitForElement(pf.mouseHovers(),20);
+		CommonUtil.mouseHover(pf.mouseHovers());
+		
+		CommonUtil.highLighterMethod(driver, pf.getlogOut());
+		WaitHelper.waitForElement(pf.getlogOut(),20);
+		pf.getlogOut().click();
+		
+		
+		String actual = "Zoopla > Search Property to Buy, Rent, House Prices, Estate Agents";
+	    Assert.assertEquals(actual, driver.getTitle());
+		Assert.assertTrue(true);
+		System.out.println("My Expected result is : " + driver.getTitle());
+		
 	}
 }

@@ -434,11 +434,16 @@ public class CommonUtil extends SupperClass {
 		}
 	}
 
-	public void mouseHoverJavaScript(WebElement ele) {
+	public static void mouseHoverJavaScript(WebElement ele) {
 		String javaScript = "var evObj = document.createEvent('MouseEvents');"
 				+ "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);"
 				+ "arguments[0].dispatchEvent(evObj);";
 		((JavascriptExecutor) driver).executeScript(javaScript, ele);
 	}
 
+	public static void mouseHover(WebElement ele) {
+		Actions action = new Actions(driver);
+		action.moveToElement(ele).perform();
+	}
+	
 }

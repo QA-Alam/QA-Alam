@@ -7,6 +7,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.ny.basepage.SupperClass;
+import com.utility.CommonUtil;
 import com.utility.WaitHelper;
 
 public class ZooplaElementsPage extends SupperClass {
@@ -54,11 +55,13 @@ public class ZooplaElementsPage extends SupperClass {
 	}
 
 	public void getLogin() {
-		//WaitHelper.waitForElement(getClickSingButton(), 20);
-		//getClickSingButton().click();
+		CommonUtil.highLighterMethod(driver, getClickSingButton());
+		CommonUtil.waitThenClick(getClickSingButton(), driver);
 		enterUserName.sendKeys(prop.getProperty("userName"));
 		enterPassword.sendKeys(prop.getProperty("textPassword"));
-		clickLogginButton.click();
+		CommonUtil.highLighterMethod(driver, clickLogginButton);
+		CommonUtil.waitThenClick(clickLogginButton, driver);
+
 	}
 
 	// ********************************************************************
@@ -79,6 +82,22 @@ public class ZooplaElementsPage extends SupperClass {
 		return enterLocation;
 	}
 
+	@FindBy(xpath = "(//*[@class='css-1oi1pic-SignedInLink e1kwm23x4']/a)[1]")
+	@CacheLookup
+	private WebElement mouseHover;
+
+	public WebElement mouseHovers(){
+		return mouseHover;
+	}
+	
+	@FindBy(xpath = "(//*[text()='Sign out'])[1]")
+	@CacheLookup
+	private WebElement logOut;
+
+	public WebElement getlogOut(){
+		return logOut;
+	}
+	
 	@FindBy(xpath = "//*[@class='css-1o565rw-Text eczcs4p0']")
 	@CacheLookup
 	private WebElement propertyPrice;
@@ -195,4 +214,6 @@ public class ZooplaElementsPage extends SupperClass {
 		}
 
 	}
+
+
 }
