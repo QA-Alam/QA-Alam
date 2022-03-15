@@ -1,15 +1,12 @@
 package com.stepdefinations;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-
 import com.ny.basepage.SupperClass;
 import com.pagefactory.ZooplaElementsPage;
 import com.utility.CommonUtil;
 import com.utility.WaitHelper;
-
 import cucumber.api.java.en.*;
 
 public class FunctionalStepDef extends SupperClass {
