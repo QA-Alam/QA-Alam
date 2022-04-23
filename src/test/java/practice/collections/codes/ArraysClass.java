@@ -5,8 +5,8 @@ import org.testng.annotations.Test;
 
 public class ArraysClass {
 
-	//@Test
-	public void getSpecificNumFromArraysAndVariable() {
+	    //@Test
+	    public void getSpecificNumFromArraysAndVariable() {
 		int[] vowels = { 5, 20, 30, 45, 90, 80, 95, 100, 105, 115, 200, 225, 300, 305 };
 		int number = 75;
 		//Object[] both
@@ -17,7 +17,7 @@ public class ArraysClass {
 				System.out.println(found);
 				break;
 		}		}		}
-	@Test
+	    @Test
 		public  void mains() {
 			 int[] num = {1, 2, 3, 4, 5};
 			    int toFind = 3;
@@ -35,7 +35,7 @@ public class ArraysClass {
 			      System.out.println(toFind + " is not found.");
 			  }
 	
-	public static void main(String[] args) {
+	    public static void main(String[] args) {
 		// declaring and initializing 2D array
 		int arr[][] = { { 1, 2, 3, 4 }, { 2, 4, 0, 6 }, { 4, 4, 5, 8 } };
 		// First count the value as row

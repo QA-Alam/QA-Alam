@@ -34,7 +34,7 @@ public class RemoveDuplicate {
 		}
 	}
 
-	// @Test
+	@Test
 	public void getHighestNum() {
 		ArrayList<Integer> al = new ArrayList<Integer>();
 		al.add(1);

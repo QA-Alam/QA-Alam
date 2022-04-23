@@ -58,7 +58,7 @@ public class ListClass {
 	// ArrayList when we added new values memory will increase 50%
 	// ArrayList can handle
 
-	// Generic style 
+	// Generic style
 	public static void mains() {
 
 		// Old way

@@ -31,7 +31,7 @@ SQL> alter user hr identified by hr
                                                                                            TreeSet is sorted by natural order in java.
                                   
                                     List allows to store many null keys       Most of the Set implementations allow to        Lets look at Map implementations -
-                                    in java.                                  add only one null in java.                      HashMap allows one null key and many null values.
+                                    in java.                                  add only one null in java.                                      HashMap allows one null key and many null values.
 3,     Null keys                                                              TreeSet and ConcurrentSkipListSet               LinkedHashMap allows one null key and many null values.
                                                                               does not allow to add null in java.             TreeMap doesn't allow null key but allow many null values.
                                                                                                                               Hashtable doesn't allow null key or null values.
@@ -39,7 +39,7 @@ SQL> alter user hr identified by hr
                                                                                                                               ConcurrentSkipListMap doesn't allow null key or null values.
 
                                   List implementations provide get method     Set implementations does not provide any        Map implementations does not provide any such get 
-                                  to get element on specific index in java.   such get method to get element on               method to get element on specified index in java.
+                                  to get element on specific index in java.         such get method to get element on               method to get element on specified index in java.
 4,   Getting element on           ArrayList, Vector, copyOnWriteArrayList     specified index in java.
       specific index              and LinkedList provides get(int index)
                                   Method returns element on specified index.
@@ -69,7 +69,7 @@ SQL> alter user hr identified by hr
 
 8, Index based structure         As ArrayList uses array for implementation  Set is not index based structure at all in java.  Map is not index based structure at all in java.
       /RandomAccess              it is index based structure, hence 
-                                 provides random access to elements.
+                                         provides random access to elements.
 
 
 9, unsynchronized                ArrayList, LinkedList                        HashSet, LinkedHashSet, TreeSet, EnumSet          HashMap,  LinkedHashMap,  TreeMap,  IdentityHashMap,
